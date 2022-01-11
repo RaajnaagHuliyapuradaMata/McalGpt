@@ -4,20 +4,20 @@
 
 class class_Gpt{
    public:
-      void GetVersionInfo      (void);
-      void InitFunction        (void);
-      void DeInitFunction      (void);
-      void GetTimeElapsed      (void);
-      void GetTimeRemaining    (void);
-      void StartTimer          (void);
-      void StopTimer           (void);
-      void DisableNotification (void);
-      void EnableNotification  (void);
-      void SetMode             (void);
-      void CheckWakeup         (void);
-      void DisableWakeup       (void);
-      void EnableWakeup        (void);
-      void GetPredefTimerValue (void);
+      FUNC(void, GPT_CODE) GetVersionInfo      (void);
+      FUNC(void, GPT_CODE) InitFunction        (void);
+      FUNC(void, GPT_CODE) DeInitFunction      (void);
+      FUNC(void, GPT_CODE) GetTimeElapsed      (void);
+      FUNC(void, GPT_CODE) GetTimeRemaining    (void);
+      FUNC(void, GPT_CODE) StartTimer          (void);
+      FUNC(void, GPT_CODE) StopTimer           (void);
+      FUNC(void, GPT_CODE) DisableNotification (void);
+      FUNC(void, GPT_CODE) EnableNotification  (void);
+      FUNC(void, GPT_CODE) SetMode             (void);
+      FUNC(void, GPT_CODE) CheckWakeup         (void);
+      FUNC(void, GPT_CODE) DisableWakeup       (void);
+      FUNC(void, GPT_CODE) EnableWakeup        (void);
+      FUNC(void, GPT_CODE) GetPredefTimerValue (void);
 };
 
 extern class_Gpt Gpt;

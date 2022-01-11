@@ -2,45 +2,45 @@
 
 class_Gpt Gpt;
 
-void class_Gpt::GetVersionInfo(void){
+FUNC(void, GPT_CODE) class_Gpt::GetVersionInfo(void){
 }
 
-void class_Gpt::InitFunction(void){
+FUNC(void, GPT_CODE) class_Gpt::InitFunction(void){
 }
 
-void class_Gpt::DeInitFunction(void){
+FUNC(void, GPT_CODE) class_Gpt::DeInitFunction(void){
 }
 
-void class_Gpt::GetTimeElapsed(void){
+FUNC(void, GPT_CODE) class_Gpt::GetTimeElapsed(void){
 }
 
-void class_Gpt::GetTimeRemaining(void){
+FUNC(void, GPT_CODE) class_Gpt::GetTimeRemaining(void){
 }
 
-void class_Gpt::StartTimer(void){
+FUNC(void, GPT_CODE) class_Gpt::StartTimer(void){
 }
 
-void class_Gpt::StopTimer(void){
+FUNC(void, GPT_CODE) class_Gpt::StopTimer(void){
 }
 
-void class_Gpt::DisableNotification(void){
+FUNC(void, GPT_CODE) class_Gpt::DisableNotification(void){
 }
 
-void class_Gpt::EnableNotification(void){
+FUNC(void, GPT_CODE) class_Gpt::EnableNotification(void){
 }
 
-void class_Gpt::SetMode(void){
+FUNC(void, GPT_CODE) class_Gpt::SetMode(void){
 }
 
-void class_Gpt::CheckWakeup(void){
+FUNC(void, GPT_CODE) class_Gpt::CheckWakeup(void){
 }
 
-void class_Gpt::DisableWakeup(void){
+FUNC(void, GPT_CODE) class_Gpt::DisableWakeup(void){
 }
 
-void class_Gpt::EnableWakeup(void){
+FUNC(void, GPT_CODE) class_Gpt::EnableWakeup(void){
 }
 
-void class_Gpt::GetPredefTimerValue(void){
+FUNC(void, GPT_CODE) class_Gpt::GetPredefTimerValue(void){
 }
 
