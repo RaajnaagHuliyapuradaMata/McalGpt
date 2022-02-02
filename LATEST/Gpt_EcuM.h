@@ -1,14 +1,15 @@
 #pragma once
 /*****************************************************/
-/* File   : Gpt.h                                    */
+/* File   : Gpt_EcuM.h                               */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "Std_Types.h"
 #include "Compiler_Cfg_Gpt.h"
+
+#include "EcuM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -21,23 +22,13 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_Gpt{
+class class_Gpt_EcuM : public class_EcuM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, GPT_CODE) GetVersionInfo      (void);
-      FUNC(void, GPT_CODE) GetTimeElapsed      (void);
-      FUNC(void, GPT_CODE) GetTimeRemaining    (void);
-      FUNC(void, GPT_CODE) StartTimer          (void);
-      FUNC(void, GPT_CODE) StopTimer           (void);
-      FUNC(void, GPT_CODE) DisableNotification (void);
-      FUNC(void, GPT_CODE) EnableNotification  (void);
-      FUNC(void, GPT_CODE) SetMode             (void);
-      FUNC(void, GPT_CODE) CheckWakeup         (void);
-      FUNC(void, GPT_CODE) DisableWakeup       (void);
-      FUNC(void, GPT_CODE) EnableWakeup        (void);
-      FUNC(void, GPT_CODE) GetPredefTimerValue (void);
+      FUNC(void, GPT_CODE) InitFunction   (void);
+      FUNC(void, GPT_CODE) DeInitFunction (void);
 };
 
 /*****************************************************/
@@ -51,7 +42,7 @@ class class_Gpt{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_Gpt Gpt;
+extern class_Gpt_EcuM *Gpt_EcuM_ptr;
 
 /*****************************************************/
 /* EOF                                               */

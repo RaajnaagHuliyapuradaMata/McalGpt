@@ -8,6 +8,8 @@
 /*****************************************************/
 #include "Gpt.h"
 
+#include "Gpt_EcuM.h"
+
 /*****************************************************/
 /* #DEFINES                                          */
 /*****************************************************/
@@ -32,17 +34,19 @@
 /* OBJECTS                                           */
 /*****************************************************/
 class_Gpt Gpt;
+class_Gpt_EcuM Gpt_EcuM;
+class_Gpt_EcuM *Gpt_EcuM_ptr = &Gpt_EcuM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
+FUNC(void, GPT_CODE) class_Gpt_EcuM::InitFunction(void){
+}
+
+FUNC(void, GPT_CODE) class_Gpt_EcuM::DeInitFunction(void){
+}
+
 FUNC(void, GPT_CODE) class_Gpt::GetVersionInfo(void){
-}
-
-FUNC(void, GPT_CODE) class_Gpt::InitFunction(void){
-}
-
-FUNC(void, GPT_CODE) class_Gpt::DeInitFunction(void){
 }
 
 FUNC(void, GPT_CODE) class_Gpt::GetTimeElapsed(void){
