@@ -42,7 +42,7 @@ class class_Gpt_EcuM : public class_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_Gpt_EcuM *Gpt_EcuM_ptr;
+extern class_EcuM_Client *EcuM_Client_ptr_Gpt;
 
 /*****************************************************/
 /* EOF                                               */

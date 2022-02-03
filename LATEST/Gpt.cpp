@@ -33,9 +33,9 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_Gpt Gpt;
 class_Gpt_EcuM Gpt_EcuM;
-class_Gpt_EcuM *Gpt_EcuM_ptr = &Gpt_EcuM;
+class_EcuM_Client *EcuM_Client_ptr_Gpt = &Gpt_EcuM;
+class_Gpt Gpt;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
