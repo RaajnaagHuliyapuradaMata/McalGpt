@@ -6,9 +6,10 @@
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "Gpt.h"
-
+#include "module.h"
 #include "Gpt_EcuM.h"
+#include "Gpt_SchM.h"
+#include "Gpt_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -21,6 +22,16 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class module_Gpt:
+      public abstract_module
+   ,  public interface_Gpt_EcuM
+   ,  public interface_Gpt_SchM
+{
+   public:
+      FUNC(void, GPT_CODE) InitFunction   (void);
+      FUNC(void, GPT_CODE) DeInitFunction (void);
+      FUNC(void, GPT_CODE) MainFunction   (void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -33,53 +44,57 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_Gpt_EcuM Gpt_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_Gpt = &Gpt_EcuM;
-class_Gpt Gpt;
+module_Gpt Gpt;
+
+interface_Gpt_EcuM *EcuM_Client_ptr_Gpt = &Gpt;
+interface_Gpt_SchM *SchM_Client_ptr_Gpt = &Gpt;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, GPT_CODE) class_Gpt_EcuM::InitFunction(void){
+FUNC(void, GPT_CODE) module_Gpt::InitFunction(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt_EcuM::DeInitFunction(void){
+FUNC(void, GPT_CODE) module_Gpt::DeInitFunction(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt::GetVersionInfo(void){
+FUNC(void, GPT_CODE) module_Gpt::MainFunction(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt::GetTimeElapsed(void){
+FUNC(void, GPT_CODE) class_Gpt_Unused::GetVersionInfo(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt::GetTimeRemaining(void){
+FUNC(void, GPT_CODE) class_Gpt_Unused::GetTimeElapsed(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt::StartTimer(void){
+FUNC(void, GPT_CODE) class_Gpt_Unused::GetTimeRemaining(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt::StopTimer(void){
+FUNC(void, GPT_CODE) class_Gpt_Unused::StartTimer(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt::DisableNotification(void){
+FUNC(void, GPT_CODE) class_Gpt_Unused::StopTimer(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt::EnableNotification(void){
+FUNC(void, GPT_CODE) class_Gpt_Unused::DisableNotification(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt::SetMode(void){
+FUNC(void, GPT_CODE) class_Gpt_Unused::EnableNotification(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt::CheckWakeup(void){
+FUNC(void, GPT_CODE) class_Gpt_Unused::SetMode(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt::DisableWakeup(void){
+FUNC(void, GPT_CODE) class_Gpt_Unused::CheckWakeup(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt::EnableWakeup(void){
+FUNC(void, GPT_CODE) class_Gpt_Unused::DisableWakeup(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt::GetPredefTimerValue(void){
+FUNC(void, GPT_CODE) class_Gpt_Unused::EnableWakeup(void){
+}
+
+FUNC(void, GPT_CODE) class_Gpt_Unused::GetPredefTimerValue(void){
 }
 
 /*****************************************************/

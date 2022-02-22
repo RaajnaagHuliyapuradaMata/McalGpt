@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : Gpt_EcuM.h                               */
+/* File   : Gpt_SchM.h                               */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -9,7 +9,7 @@
 /*****************************************************/
 #include "Compiler_Cfg_Gpt.h"
 
-#include "EcuM_Client.h"
+#include "SchM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -22,13 +22,12 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_Gpt_EcuM : public interface_EcuM_Client{
+class interface_Gpt_SchM : public interface_SchM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, GPT_CODE) InitFunction   (void);
-      FUNC(void, GPT_CODE) DeInitFunction (void);
+      FUNC(void, GPT_CODE) MainFunction(void);
 };
 
 /*****************************************************/
@@ -42,7 +41,7 @@ class interface_Gpt_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_Gpt_EcuM *EcuM_Client_ptr_Gpt;
+extern interface_Gpt_SchM *SchM_Client_ptr_Gpt;
 
 /*****************************************************/
 /* EOF                                               */
