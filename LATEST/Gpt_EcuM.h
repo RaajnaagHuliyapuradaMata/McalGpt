@@ -27,8 +27,8 @@ class interface_Gpt_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, GPT_CODE) InitFunction   (void);
-      FUNC(void, GPT_CODE) DeInitFunction (void);
+      virtual FUNC(void, GPT_CODE) InitFunction   (void) = 0;
+      virtual FUNC(void, GPT_CODE) DeInitFunction (void) = 0;
 };
 
 /*****************************************************/
