@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_Gpt:
       public abstract_module
-   ,  public interface_Gpt_EcuM
-   ,  public interface_Gpt_SchM
 {
    public:
       FUNC(void, GPT_CODE) InitFunction   (void);
@@ -44,10 +42,9 @@ class module_Gpt:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_Gpt Gpt;
-
-interface_Gpt_EcuM *EcuM_Client_ptr_Gpt = &Gpt;
-interface_Gpt_SchM *SchM_Client_ptr_Gpt = &Gpt;
+module_Gpt     Gpt;
+infEcuMClient* gptrinfEcuMClient_Gpt = &Gpt;
+infSchMClient* gptrinfSchMClient_Gpt = &Gpt;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
