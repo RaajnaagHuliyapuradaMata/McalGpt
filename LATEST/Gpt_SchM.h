@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_Gpt_SchM *SchM_Client_ptr_Gpt;
+extern infSchMClient *gptrinfSchMClient_Gpt;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
