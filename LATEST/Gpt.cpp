@@ -7,8 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "Gpt_EcuM.h"
-#include "Gpt_SchM.h"
+#include "infGpt_EcuM.h"
+#include "infGpt_SchM.h"
 #include "Gpt_Unused.h"
 
 /*****************************************************/
@@ -28,6 +28,7 @@ class module_Gpt:
    public:
       FUNC(void, GPT_CODE) InitFunction   (void);
       FUNC(void, GPT_CODE) DeInitFunction (void);
+      FUNC(void, GPT_CODE) GetVersionInfo (void);
       FUNC(void, GPT_CODE) MainFunction   (void);
 };
 
@@ -44,6 +45,7 @@ class module_Gpt:
 /*****************************************************/
 module_Gpt     Gpt;
 infEcuMClient* gptrinfEcuMClient_Gpt = &Gpt;
+infDcmClient*  gptrinfDcmClient_Gpt  = &Gpt;
 infSchMClient* gptrinfSchMClient_Gpt = &Gpt;
 
 /*****************************************************/
@@ -53,6 +55,9 @@ FUNC(void, GPT_CODE) module_Gpt::InitFunction(void){
 }
 
 FUNC(void, GPT_CODE) module_Gpt::DeInitFunction(void){
+}
+
+FUNC(void, GPT_CODE) module_Gpt::GetVersionInfo(void){
 }
 
 FUNC(void, GPT_CODE) module_Gpt::MainFunction(void){
