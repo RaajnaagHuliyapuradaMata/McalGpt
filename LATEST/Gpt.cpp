@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infGpt_Version.h"
+#include "Gpt_Cfg.h"
 #include "infGpt_EcuM.h"
 #include "infGpt_Dcm.h"
 #include "infGpt_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define GPT_AR_RELEASE_MAJOR_VERSION                                           4
+#define GPT_AR_RELEASE_MINOR_VERSION                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(GPT_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible GPT_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(GPT_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible GPT_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -61,6 +70,11 @@ FUNC(void, GPT_CODE) module_Gpt::DeInitFunction(void){
 }
 
 FUNC(void, GPT_CODE) module_Gpt::GetVersionInfo(void){
+#if(STD_ON == Gpt_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, GPT_CODE) module_Gpt::MainFunction(void){
