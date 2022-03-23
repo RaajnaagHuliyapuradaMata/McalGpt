@@ -40,6 +40,16 @@ class module_Gpt:
       FUNC(void, GPT_CODE) DeInitFunction (void);
       FUNC(void, GPT_CODE) GetVersionInfo (void);
       FUNC(void, GPT_CODE) MainFunction   (void);
+
+   private:
+      CONST(Std_TypeVersionInfo, GPT_CONST) VersionInfo = {
+            0x0000
+         ,  0xFFFF
+         ,  0x01
+         ,  '0'
+         ,  '1'
+         ,  '0'
+      };
 };
 
 /******************************************************************************/
