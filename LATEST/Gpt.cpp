@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "Gpt_Cfg.h"
+#include "CfgGpt.h"
 #include "infGpt_EcuM.h"
 #include "infGpt_Dcm.h"
 #include "infGpt_SchM.h"
