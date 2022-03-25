@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgGpt.h"
-#include "infGpt_EcuM.h"
-#include "infGpt_Dcm.h"
-#include "infGpt_SchM.h"
+#include "module.hpp"
+#include "CfgGpt.hpp"
+#include "infGpt_EcuM.hpp"
+#include "infGpt_Dcm.hpp"
+#include "infGpt_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -90,7 +90,7 @@ FUNC(void, GPT_CODE) module_Gpt::GetVersionInfo(void){
 FUNC(void, GPT_CODE) module_Gpt::MainFunction(void){
 }
 
-#include "Gpt_Unused.h"
+#include "Gpt_Unused.hpp"
 
 FUNC(void, GPT_CODE) class_Gpt_Unused::GetTimeElapsed(void){
 }
