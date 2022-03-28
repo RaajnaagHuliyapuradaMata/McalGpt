@@ -90,7 +90,20 @@ FUNC(void, GPT_CODE) module_Gpt::GetVersionInfo(void){
 FUNC(void, GPT_CODE) module_Gpt::MainFunction(void){
 }
 
-#include "Gpt_Unused.hpp"
+class class_Gpt_Unused{
+   public:
+      FUNC(void, GPT_CODE) GetTimeElapsed      (void);
+      FUNC(void, GPT_CODE) GetTimeRemaining    (void);
+      FUNC(void, GPT_CODE) StartTimer          (void);
+      FUNC(void, GPT_CODE) StopTimer           (void);
+      FUNC(void, GPT_CODE) DisableNotification (void);
+      FUNC(void, GPT_CODE) EnableNotification  (void);
+      FUNC(void, GPT_CODE) SetMode             (void);
+      FUNC(void, GPT_CODE) CheckWakeup         (void);
+      FUNC(void, GPT_CODE) DisableWakeup       (void);
+      FUNC(void, GPT_CODE) EnableWakeup        (void);
+      FUNC(void, GPT_CODE) GetPredefTimerValue (void);
+};
 
 FUNC(void, GPT_CODE) class_Gpt_Unused::GetTimeElapsed(void){
 }
