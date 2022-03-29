@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgGpt.hpp"
 #include "infGpt_EcuM.hpp"
 #include "infGpt_Dcm.hpp"
 #include "infGpt_SchM.hpp"
@@ -36,37 +35,40 @@ class module_Gpt:
       public abstract_module
 {
    public:
+      module_Gpt(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, GPT_CODE) InitFunction   (void);
       FUNC(void, GPT_CODE) DeInitFunction (void);
-      FUNC(void, GPT_CODE) GetVersionInfo (void);
       FUNC(void, GPT_CODE) MainFunction   (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, GPT_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_Gpt, GPT_VAR) Gpt;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+CONSTP2VAR(infEcuMClient, GPT_VAR, GPT_CONST) gptrinfEcuMClient_Gpt = &Gpt;
+CONSTP2VAR(infDcmClient,  GPT_VAR, GPT_CONST) gptrinfDcmClient_Gpt  = &Gpt;
+CONSTP2VAR(infSchMClient, GPT_VAR, GPT_CONST) gptrinfSchMClient_Gpt = &Gpt;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
+#include "CfgGpt.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_Gpt, GPT_VAR) Gpt;
-CONSTP2VAR(infEcuMClient, GPT_VAR, GPT_CONST) gptrinfEcuMClient_Gpt = &Gpt;
-CONSTP2VAR(infDcmClient,  GPT_VAR, GPT_CONST) gptrinfDcmClient_Gpt  = &Gpt;
-CONSTP2VAR(infSchMClient, GPT_VAR, GPT_CONST) gptrinfSchMClient_Gpt = &Gpt;
+VAR(module_Gpt, GPT_VAR) Gpt(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -77,14 +79,6 @@ FUNC(void, GPT_CODE) module_Gpt::InitFunction(void){
 
 FUNC(void, GPT_CODE) module_Gpt::DeInitFunction(void){
    Gpt.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, GPT_CODE) module_Gpt::GetVersionInfo(void){
-#if(STD_ON == Gpt_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, GPT_CODE) module_Gpt::MainFunction(void){
