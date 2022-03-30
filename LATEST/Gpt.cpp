@@ -6,7 +6,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.hpp"
+#include "Module.hpp"
 #include "infGpt_EcuM.hpp"
 #include "infGpt_Dcm.hpp"
 #include "infGpt_SchM.hpp"
@@ -37,6 +37,9 @@ class module_Gpt:
    public:
       module_Gpt(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
+      FUNC(void, _CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      );
       FUNC(void, GPT_CODE) InitFunction   (void);
       FUNC(void, GPT_CODE) DeInitFunction (void);
       FUNC(void, GPT_CODE) MainFunction   (void);
@@ -73,7 +76,19 @@ VAR(module_Gpt, GPT_VAR) Gpt(
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, GPT_CODE) module_Gpt::InitFunction(void){
+FUNC(void, GPT_CODE) module_Gpt::InitFunction(
+   CONSTP2CONST(CfgGpt_Type, CFGGPT_CONFIG_DATA, CFGGPT_APPL_CONST) lptrCfgGpt
+){
+   if(NULL_PTR == lptrCfgGpt){
+#if(STD_ON == Gpt_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+// check lptrCfgGpt for memory faults
+// use PBcfg_Gpt as back-up configuration
+   }
    Gpt.IsInitDone = E_OK;
 }
 
