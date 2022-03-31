@@ -37,10 +37,9 @@ class module_Gpt:
    public:
       module_Gpt(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
-      FUNC(void, _CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      FUNC(void, GPT_CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, GPT_CONFIG_DATA, GPT_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, GPT_CODE) InitFunction   (void);
       FUNC(void, GPT_CODE) DeInitFunction (void);
       FUNC(void, GPT_CODE) MainFunction   (void);
 };
@@ -77,23 +76,39 @@ VAR(module_Gpt, GPT_VAR) Gpt(
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, GPT_CODE) module_Gpt::InitFunction(
-   CONSTP2CONST(CfgGpt_Type, CFGGPT_CONFIG_DATA, CFGGPT_APPL_CONST) lptrCfgGpt
+   CONSTP2CONST(CfgModule_TypeAbstract, GPT_CONFIG_DATA, GPT_APPL_CONST) lptrCfgModule
 ){
-   if(NULL_PTR == lptrCfgGpt){
+   if(E_OK == IsInitDone){
 #if(STD_ON == Gpt_DevErrorDetect)
       Det_ReportError(
       );
 #endif
    }
    else{
-// check lptrCfgGpt for memory faults
+      if(NULL_PTR == lptrCfgModule){
+#if(STD_ON == Gpt_DevErrorDetect)
+         Det_ReportError(
+         );
+#endif
+      }
+      else{
+// check lptrCfgModule for memory faults
 // use PBcfg_Gpt as back-up configuration
+      }
+      IsInitDone = E_OK;
    }
-   Gpt.IsInitDone = E_OK;
 }
 
 FUNC(void, GPT_CODE) module_Gpt::DeInitFunction(void){
-   Gpt.IsInitDone = E_NOT_OK;
+   if(E_OK != IsInitDone){
+#if(STD_ON == Gpt_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+      IsInitDone = E_NOT_OK;
+   }
 }
 
 FUNC(void, GPT_CODE) module_Gpt::MainFunction(void){
