@@ -78,6 +78,7 @@ VAR(module_Gpt, GPT_VAR) Gpt(
 FUNC(void, GPT_CODE) module_Gpt::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, GPT_CONFIG_DATA, GPT_APPL_CONST) lptrCfgModule
 ){
+#if(STD_ON == Gpt_InitCheck)
    if(E_OK == IsInitDone){
 #if(STD_ON == Gpt_DevErrorDetect)
       Det_ReportError(
@@ -85,6 +86,7 @@ FUNC(void, GPT_CODE) module_Gpt::InitFunction(
 #endif
    }
    else{
+#endif
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Gpt_DevErrorDetect)
          Det_ReportError(
@@ -96,10 +98,13 @@ FUNC(void, GPT_CODE) module_Gpt::InitFunction(
 // use PBcfg_Gpt as back-up configuration
       }
       IsInitDone = E_OK;
+#if(STD_ON == Gpt_InitCheck)
    }
+#endif
 }
 
 FUNC(void, GPT_CODE) module_Gpt::DeInitFunction(void){
+#if(STD_ON == Gpt_InitCheck)
    if(E_OK != IsInitDone){
 #if(STD_ON == Gpt_DevErrorDetect)
       Det_ReportError(
@@ -107,11 +112,26 @@ FUNC(void, GPT_CODE) module_Gpt::DeInitFunction(void){
 #endif
    }
    else{
+#endif
       IsInitDone = E_NOT_OK;
+#if(STD_ON == Gpt_InitCheck)
    }
+#endif
 }
 
 FUNC(void, GPT_CODE) module_Gpt::MainFunction(void){
+#if(STD_ON == Gpt_InitCheck)
+   if(E_OK != IsInitDone){
+#if(STD_ON == Gpt_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+#endif
+#if(STD_ON == Gpt_InitCheck)
+   }
+#endif
 }
 
 class class_Gpt_Unused{
