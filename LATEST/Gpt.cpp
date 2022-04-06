@@ -14,18 +14,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define GPT_AR_RELEASE_MAJOR_VERSION                                           4
-#define GPT_AR_RELEASE_MINOR_VERSION                                           3
+#define GPT_AR_RELEASE_VERSION_MAJOR                                           4
+#define GPT_AR_RELEASE_VERSION_MINOR                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(GPT_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
-   #error "Incompatible GPT_AR_RELEASE_MAJOR_VERSION!"
+#if(GPT_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible GPT_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(GPT_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
-   #error "Incompatible GPT_AR_RELEASE_MINOR_VERSION!"
+#if(GPT_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible GPT_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -63,8 +63,10 @@ CONSTP2VAR(infSchMClient, GPT_VAR, GPT_CONST) gptrinfSchMClient_Gpt = &Gpt;
 /******************************************************************************/
 VAR(module_Gpt, GPT_VAR) Gpt(
    {
-         0x0000
-      ,  0xFFFF
+         GPT_AR_RELEASE_VERSION_MAJOR
+      ,  GPT_AR_RELEASE_VERSION_MINOR
+      ,  0x00
+      ,  0xFF
       ,  0x01
       ,  '0'
       ,  '1'
