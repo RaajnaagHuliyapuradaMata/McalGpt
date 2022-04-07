@@ -101,8 +101,8 @@ FUNC(void, GPT_CODE) module_Gpt::InitFunction(
             lptrCfg = lptrCfgModule;
          }
          else{
-// use PBcfg_CanIf as back-up configuration
-            lptrCfg = PBcfg_CanIf;
+// use PBcfgCanIf as back-up configuration
+            lptrCfg = &PBcfgGpt;
          }
       }
       IsInitDone = E_OK;
