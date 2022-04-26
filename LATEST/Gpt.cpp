@@ -31,8 +31,24 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_Gpt_Functionality{
+   public:
+      FUNC(void, GPT_CODE) GetTimeElapsed      (void);
+      FUNC(void, GPT_CODE) GetTimeRemaining    (void);
+      FUNC(void, GPT_CODE) StartTimer          (void);
+      FUNC(void, GPT_CODE) StopTimer           (void);
+      FUNC(void, GPT_CODE) DisableNotification (void);
+      FUNC(void, GPT_CODE) EnableNotification  (void);
+      FUNC(void, GPT_CODE) SetMode             (void);
+      FUNC(void, GPT_CODE) CheckWakeup         (void);
+      FUNC(void, GPT_CODE) DisableWakeup       (void);
+      FUNC(void, GPT_CODE) EnableWakeup        (void);
+      FUNC(void, GPT_CODE) GetPredefTimerValue (void);
+};
+
 class module_Gpt:
       public abstract_module
+   ,  public class_Gpt_Functionality
 {
    public:
       module_Gpt(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -84,6 +100,10 @@ FUNC(void, GPT_CODE) module_Gpt::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == Gpt_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -92,6 +112,10 @@ FUNC(void, GPT_CODE) module_Gpt::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Gpt_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -116,6 +140,10 @@ FUNC(void, GPT_CODE) module_Gpt::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Gpt_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -132,6 +160,10 @@ FUNC(void, GPT_CODE) module_Gpt::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Gpt_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -142,52 +174,37 @@ FUNC(void, GPT_CODE) module_Gpt::MainFunction(void){
 #endif
 }
 
-class class_Gpt_Unused{
-   public:
-      FUNC(void, GPT_CODE) GetTimeElapsed      (void);
-      FUNC(void, GPT_CODE) GetTimeRemaining    (void);
-      FUNC(void, GPT_CODE) StartTimer          (void);
-      FUNC(void, GPT_CODE) StopTimer           (void);
-      FUNC(void, GPT_CODE) DisableNotification (void);
-      FUNC(void, GPT_CODE) EnableNotification  (void);
-      FUNC(void, GPT_CODE) SetMode             (void);
-      FUNC(void, GPT_CODE) CheckWakeup         (void);
-      FUNC(void, GPT_CODE) DisableWakeup       (void);
-      FUNC(void, GPT_CODE) EnableWakeup        (void);
-      FUNC(void, GPT_CODE) GetPredefTimerValue (void);
-};
-
-FUNC(void, GPT_CODE) class_Gpt_Unused::GetTimeElapsed(void){
+FUNC(void, GPT_CODE) class_Gpt_Functionality::GetTimeElapsed(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt_Unused::GetTimeRemaining(void){
+FUNC(void, GPT_CODE) class_Gpt_Functionality::GetTimeRemaining(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt_Unused::StartTimer(void){
+FUNC(void, GPT_CODE) class_Gpt_Functionality::StartTimer(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt_Unused::StopTimer(void){
+FUNC(void, GPT_CODE) class_Gpt_Functionality::StopTimer(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt_Unused::DisableNotification(void){
+FUNC(void, GPT_CODE) class_Gpt_Functionality::DisableNotification(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt_Unused::EnableNotification(void){
+FUNC(void, GPT_CODE) class_Gpt_Functionality::EnableNotification(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt_Unused::SetMode(void){
+FUNC(void, GPT_CODE) class_Gpt_Functionality::SetMode(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt_Unused::CheckWakeup(void){
+FUNC(void, GPT_CODE) class_Gpt_Functionality::CheckWakeup(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt_Unused::DisableWakeup(void){
+FUNC(void, GPT_CODE) class_Gpt_Functionality::DisableWakeup(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt_Unused::EnableWakeup(void){
+FUNC(void, GPT_CODE) class_Gpt_Functionality::EnableWakeup(void){
 }
 
-FUNC(void, GPT_CODE) class_Gpt_Unused::GetPredefTimerValue(void){
+FUNC(void, GPT_CODE) class_Gpt_Functionality::GetPredefTimerValue(void){
 }
 
 /******************************************************************************/
