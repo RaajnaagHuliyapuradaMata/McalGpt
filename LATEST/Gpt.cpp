@@ -31,21 +31,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_Gpt_Functionality{
-   public:
-      FUNC(void, GPT_CODE) GetTimeElapsed      (void);
-      FUNC(void, GPT_CODE) GetTimeRemaining    (void);
-      FUNC(void, GPT_CODE) StartTimer          (void);
-      FUNC(void, GPT_CODE) StopTimer           (void);
-      FUNC(void, GPT_CODE) DisableNotification (void);
-      FUNC(void, GPT_CODE) EnableNotification  (void);
-      FUNC(void, GPT_CODE) SetMode             (void);
-      FUNC(void, GPT_CODE) CheckWakeup         (void);
-      FUNC(void, GPT_CODE) DisableWakeup       (void);
-      FUNC(void, GPT_CODE) EnableWakeup        (void);
-      FUNC(void, GPT_CODE) GetPredefTimerValue (void);
-};
-
 class module_Gpt:
       public abstract_module
    ,  public class_Gpt_Functionality
