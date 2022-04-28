@@ -7,6 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "Gpt_core.hpp"
 #include "infGpt_EcuM.hpp"
 #include "infGpt_Dcm.hpp"
 #include "infGpt_SchM.hpp"
