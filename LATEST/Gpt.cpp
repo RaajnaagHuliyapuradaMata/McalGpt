@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgGpt.hpp"
 #include "Gpt_core.hpp"
-#include "infGpt_EcuM.hpp"
-#include "infGpt_Dcm.hpp"
-#include "infGpt_SchM.hpp"
+#include "infGpt.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_Gpt:
       );
       FUNC(void, GPT_CODE) DeInitFunction (void);
       FUNC(void, GPT_CODE) MainFunction   (void);
+      GPT_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_Gpt, GPT_VAR) Gpt;
@@ -58,7 +58,6 @@ CONSTP2VAR(infSchMClient, GPT_VAR, GPT_CONST) gptrinfSchMClient_Gpt = &Gpt;
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgGpt.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
