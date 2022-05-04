@@ -113,7 +113,7 @@ FUNC(void, GPT_CODE) module_Gpt::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  GPT_E_UNINIT
       );
 #endif
    }
@@ -133,7 +133,7 @@ FUNC(void, GPT_CODE) module_Gpt::DeInitFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  GPT_E_UNINIT
       );
 #endif
    }
@@ -152,7 +152,7 @@ FUNC(void, GPT_CODE) module_Gpt::MainFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  GPT_E_UNINIT
       );
 #endif
    }
