@@ -89,7 +89,10 @@ FUNC(void, GPT_CODE) module_Gpt::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, GPT_CONFIG_DATA, GPT_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Gpt_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -127,7 +130,10 @@ FUNC(void, GPT_CODE) module_Gpt::InitFunction(
 
 FUNC(void, GPT_CODE) module_Gpt::DeInitFunction(void){
 #if(STD_ON == Gpt_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Gpt_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -147,7 +153,10 @@ FUNC(void, GPT_CODE) module_Gpt::DeInitFunction(void){
 
 FUNC(void, GPT_CODE) module_Gpt::MainFunction(void){
 #if(STD_ON == Gpt_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Gpt_InitCheck)
    }
