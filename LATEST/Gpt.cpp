@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgGpt.hpp"
 #include "Gpt_core.hpp"
-#include "infGpt.hpp"
+#include "infGpt_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Gpt:
+   INTERFACES_EXPORTED_GPT
       public abstract_module
    ,  public class_Gpt_Functionality
 {
