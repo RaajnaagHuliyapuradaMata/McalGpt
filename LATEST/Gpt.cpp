@@ -32,7 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Gpt:
-   INTERFACES_EXPORTED_GPT
+      INTERFACES_EXPORTED_GPT
       public abstract_module
    ,  public class_Gpt_Functionality
 {
