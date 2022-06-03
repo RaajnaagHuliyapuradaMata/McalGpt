@@ -10,6 +10,7 @@
 #include "CfgGpt.hpp"
 #include "Gpt_core.hpp"
 #include "infGpt_Exp.hpp"
+#include "infGpt_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
