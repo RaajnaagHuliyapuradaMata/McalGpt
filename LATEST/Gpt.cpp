@@ -74,10 +74,10 @@ CONSTP2VAR(infSchMClient, GPT_VAR, GPT_CONST) gptrinfSchMClient_Gpt = &Gpt;
 VAR(module_Gpt, GPT_VAR) Gpt(
    {
 #if(STD_ON == _ReSIM)
-         "Gpt"
+         "Gpt",
 #else
 #endif
-      ,  GPT_AR_RELEASE_VERSION_MAJOR
+         GPT_AR_RELEASE_VERSION_MAJOR
       ,  GPT_AR_RELEASE_VERSION_MINOR
       ,  0x00
       ,  0xFF
