@@ -130,7 +130,9 @@ FUNC(void, GPT_CODE) module_Gpt::InitFunction(
 #endif
 }
 
-FUNC(void, GPT_CODE) module_Gpt::DeInitFunction(void){
+FUNC(void, GPT_CODE) module_Gpt::DeInitFunction(
+   void
+){
 #if(STD_ON == Gpt_InitCheck)
    if(
          E_OK
@@ -153,7 +155,9 @@ FUNC(void, GPT_CODE) module_Gpt::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, GPT_CODE) module_Gpt::MainFunction(void){
+FUNC(void, GPT_CODE) module_Gpt::MainFunction(
+   void
+){
 #if(STD_ON == Gpt_InitCheck)
    if(
          E_OK
@@ -175,37 +179,59 @@ FUNC(void, GPT_CODE) module_Gpt::MainFunction(void){
 #endif
 }
 
-FUNC(void, GPT_CODE) module_Gpt::GetTimeElapsed(void){
+FUNC(void, GPT_CODE) module_Gpt::GetTimeElapsed(
+   void
+){
 }
 
-FUNC(void, GPT_CODE) module_Gpt::GetTimeRemaining(void){
+FUNC(void, GPT_CODE) module_Gpt::GetTimeRemaining(
+   void
+){
 }
 
-FUNC(void, GPT_CODE) module_Gpt::StartTimer(void){
+FUNC(void, GPT_CODE) module_Gpt::StartTimer(
+   void
+){
 }
 
-FUNC(void, GPT_CODE) module_Gpt::StopTimer(void){
+FUNC(void, GPT_CODE) module_Gpt::StopTimer(
+   void
+){
 }
 
-FUNC(void, GPT_CODE) module_Gpt::DisableNotification(void){
+FUNC(void, GPT_CODE) module_Gpt::DisableNotification(
+   void
+){
 }
 
-FUNC(void, GPT_CODE) module_Gpt::EnableNotification(void){
+FUNC(void, GPT_CODE) module_Gpt::EnableNotification(
+   void
+){
 }
 
-FUNC(void, GPT_CODE) module_Gpt::SetMode(void){
+FUNC(void, GPT_CODE) module_Gpt::SetMode(
+   void
+){
 }
 
-FUNC(void, GPT_CODE) module_Gpt::CheckWakeup(void){
+FUNC(void, GPT_CODE) module_Gpt::CheckWakeup(
+   void
+){
 }
 
-FUNC(void, GPT_CODE) module_Gpt::DisableWakeup(void){
+FUNC(void, GPT_CODE) module_Gpt::DisableWakeup(
+   void
+){
 }
 
-FUNC(void, GPT_CODE) module_Gpt::EnableWakeup(void){
+FUNC(void, GPT_CODE) module_Gpt::EnableWakeup(
+   void
+){
 }
 
-FUNC(void, GPT_CODE) module_Gpt::GetPredefTimerValue(void){
+FUNC(void, GPT_CODE) module_Gpt::GetPredefTimerValue(
+   void
+){
 }
 
 /******************************************************************************/
