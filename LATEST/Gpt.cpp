@@ -82,12 +82,7 @@ FUNC(void, GPT_CODE) module_Gpt::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgGpt;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == Gpt_DevErrorDetect)
