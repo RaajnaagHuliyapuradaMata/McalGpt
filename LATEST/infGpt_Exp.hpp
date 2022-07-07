@@ -8,9 +8,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "infGpt_EcuM.hpp"
-#include "infGpt_Dcm.hpp"
 #include "infGpt_Det.hpp"
-#include "infGpt_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
