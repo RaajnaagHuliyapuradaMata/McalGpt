@@ -48,7 +48,8 @@ VAR(module_Gpt, GPT_VAR) Gpt;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, GPT_CODE) module_Gpt::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, GPT_CONFIG_DATA, GPT_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, GPT_CONST,       GPT_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   GPT_CONFIG_DATA, GPT_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Gpt_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, GPT_CODE) module_Gpt::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == Gpt_DevErrorDetect)
