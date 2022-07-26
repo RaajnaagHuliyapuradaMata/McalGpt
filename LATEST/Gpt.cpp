@@ -61,7 +61,7 @@ FUNC(void, GPT_CODE) module_Gpt::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstGpt_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
