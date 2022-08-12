@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_McalGpt:
-      INTERFACES_EXPORTED_GPT
+      INTERFACES_EXPORTED_MCALGPT
       public abstract_module
    ,  public class_McalGpt_Functionality
 {
@@ -38,13 +38,13 @@ class module_McalGpt:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      FUNC(void, GPT_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, GPT_CONST,       GPT_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   GPT_CONFIG_DATA, GPT_APPL_CONST) lptrCfgModule
+      FUNC(void, MCALGPT_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, MCALGPT_CONST,       MCALGPT_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALGPT_CONFIG_DATA, MCALGPT_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, GPT_CODE) DeInitFunction (void);
-      FUNC(void, GPT_CODE) MainFunction   (void);
-      GPT_CORE_FUNCTIONALITIES
+      FUNC(void, MCALGPT_CODE) DeInitFunction (void);
+      FUNC(void, MCALGPT_CODE) MainFunction   (void);
+      MCALGPT_CORE_FUNCTIONALITIES
 };
 
 /******************************************************************************/
@@ -58,7 +58,7 @@ class module_McalGpt:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_McalGpt, GPT_VAR) McalGpt;
+extern VAR(module_McalGpt, MCALGPT_VAR) McalGpt;
 
 /******************************************************************************/
 /* EOF                                                                        */

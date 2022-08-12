@@ -1,16 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : McalGpt.hpp                                                           */
+/* File   : infMcalGpt_ServiceDet.hpp                                                    */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstMcalGpt.hpp"
-#include "CfgMcalGpt.hpp"
-#include "McalGpt_core.hpp"
-#include "infMcalGpt_Exp.hpp"
+#include "CompilerCfg_McalGpt.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -23,29 +20,9 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_McalGpt:
-      INTERFACES_EXMCALPORTED_MCALGPT
-      public abstract_module
-   ,  public class_McalGpt_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-      const ConstMcalGpt_Type* lptrConst = (ConstMcalGpt_Type*)NULL_PTR;
-
-   public:
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-      FUNC(void, MCALGPT_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, MCALGPT_CONST,       MCALGPT_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALGPT_CONFIG_DATA, MCALGPT_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, MCALGPT_CODE) DeInitFunction (void);
-      FUNC(void, MCALGPT_CODE) MainFunction   (void);
-      MCALGPT_CORE_FUNCTIONALITIES
-};
+typedef enum{
+      GPT_E_UNINIT
+}McalGpt_TypeServiceDetErrorCode;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
@@ -58,7 +35,10 @@ class module_McalGpt:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_McalGpt, MCALGPT_VAR) McalGpt;
+
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
 
 /******************************************************************************/
 /* EOF                                                                        */

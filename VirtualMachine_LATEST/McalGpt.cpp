@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define GPT_AR_RELEASE_VERSION_MAJOR                                           4
-#define GPT_AR_RELEASE_VERSION_MINOR                                           3
+#define MCALGPT_AR_RELEASE_VERSION_MAJOR                                           4
+#define MCALGPT_AR_RELEASE_VERSION_MINOR                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(GPT_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible GPT_AR_RELEASE_VERSION_MAJOR!"
+#if(MCALGPT_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible MCALGPT_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(GPT_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible GPT_AR_RELEASE_VERSION_MINOR!"
+#if(MCALGPT_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible MCALGPT_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_McalGpt, GPT_VAR) McalGpt;
+VAR(module_McalGpt, MCALGPT_VAR) McalGpt;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, GPT_CODE) module_McalGpt::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, GPT_CONST,       GPT_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   GPT_CONFIG_DATA, GPT_APPL_CONST) lptrCfgModule
+FUNC(void, MCALGPT_CODE) module_McalGpt::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, MCALGPT_CONST,       MCALGPT_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALGPT_CONFIG_DATA, MCALGPT_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == McalGpt_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, GPT_CODE) module_McalGpt::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  GPT_E_UNINIT
+         ,  MCALGPT_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, GPT_CODE) module_McalGpt::DeInitFunction(
+FUNC(void, MCALGPT_CODE) module_McalGpt::DeInitFunction(
    void
 ){
 #if(STD_ON == McalGpt_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, GPT_CODE) module_McalGpt::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  GPT_E_UNINIT
+         ,  MCALGPT_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, GPT_CODE) module_McalGpt::MainFunction(
+FUNC(void, MCALGPT_CODE) module_McalGpt::MainFunction(
    void
 ){
 #if(STD_ON == McalGpt_InitCheck)
@@ -132,64 +132,64 @@ FUNC(void, GPT_CODE) module_McalGpt::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  GPT_E_UNINIT
+         ,  MCALGPT_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, GPT_CODE) module_McalGpt::GetTimeElapsed(
+FUNC(void, MCALGPT_CODE) module_McalGpt::GetTimeElapsed(
    void
 ){
 }
 
-FUNC(void, GPT_CODE) module_McalGpt::GetTimeRemaining(
+FUNC(void, MCALGPT_CODE) module_McalGpt::GetTimeRemaining(
    void
 ){
 }
 
-FUNC(void, GPT_CODE) module_McalGpt::StartTimer(
+FUNC(void, MCALGPT_CODE) module_McalGpt::StartTimer(
    void
 ){
 }
 
-FUNC(void, GPT_CODE) module_McalGpt::StopTimer(
+FUNC(void, MCALGPT_CODE) module_McalGpt::StopTimer(
    void
 ){
 }
 
-FUNC(void, GPT_CODE) module_McalGpt::DisableNotification(
+FUNC(void, MCALGPT_CODE) module_McalGpt::DisableNotification(
    void
 ){
 }
 
-FUNC(void, GPT_CODE) module_McalGpt::EnableNotification(
+FUNC(void, MCALGPT_CODE) module_McalGpt::EnableNotification(
    void
 ){
 }
 
-FUNC(void, GPT_CODE) module_McalGpt::SetMode(
+FUNC(void, MCALGPT_CODE) module_McalGpt::SetMode(
    void
 ){
 }
 
-FUNC(void, GPT_CODE) module_McalGpt::CheckWakeup(
+FUNC(void, MCALGPT_CODE) module_McalGpt::CheckWakeup(
    void
 ){
 }
 
-FUNC(void, GPT_CODE) module_McalGpt::DisableWakeup(
+FUNC(void, MCALGPT_CODE) module_McalGpt::DisableWakeup(
    void
 ){
 }
 
-FUNC(void, GPT_CODE) module_McalGpt::EnableWakeup(
+FUNC(void, MCALGPT_CODE) module_McalGpt::EnableWakeup(
    void
 ){
 }
 
-FUNC(void, GPT_CODE) module_McalGpt::GetPredefTimerValue(
+FUNC(void, MCALGPT_CODE) module_McalGpt::GetPredefTimerValue(
    void
 ){
 }
