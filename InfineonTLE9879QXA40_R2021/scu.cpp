@@ -233,35 +233,30 @@ void SCU_ClkInit(void){
    CMSIS_Irq_En();
 }
 */
-void SCU_Init(void){
-   SCU.COCON.reg = (uint8) (SCU_COCON);
-#if(CONFIGWIZARD == 1)
-   SCU.WDTREL.reg = (uint8) SCU_WDTRL;
+
+#if(STD_ON == _ReSIM)
+uint8 ReSim_T2IE = (uint8)1;
+uint8 ReSim_T2   = (uint8)1;
 #else
-   SCU.WDTREL.reg = (uint8) SCU_WDTREL;
 #endif
-   SCU.WDTWINB.reg = (uint8) SCU_WDTWINB;
-   SCU.WDTCON.reg = (uint8) SCU_WDTCON;
-#ifdef SCU_MODPISEL
-   SCU.MODPISEL.reg = (uint8) SCU_MODPISEL;
-#endif
-#ifdef SCU_MODPISEL1
-   SCU.MODPISEL1.reg = (uint8) SCU_MODPISEL1;
-#endif
-#ifdef SCU_MODPISEL2
-   SCU.MODPISEL2.reg = (uint8) SCU_MODPISEL2;
-#endif
-#ifdef SCU_MODPISEL3
-   SCU.MODPISEL3.reg = (uint8) SCU_MODPISEL3;
-#endif
+
+void SCU_Init(void){
+   SCU.COCON.reg      = (uint8) (SCU_COCON);
+   SCU.WDTREL.reg     = (uint8) SCU_WDTREL;
+   SCU.WDTWINB.reg    = (uint8) SCU_WDTWINB;
+   SCU.WDTCON.reg     = (uint8) SCU_WDTCON;
+   SCU.MODPISEL.reg   = (uint8) SCU_MODPISEL;
+   SCU.MODPISEL1.reg  = (uint8) SCU_MODPISEL1;
+   SCU.MODPISEL2.reg  = (uint8) SCU_MODPISEL2;
+   SCU.MODPISEL3.reg  = (uint8) SCU_MODPISEL3;
    SCU.GPT12PISEL.reg = (uint8) SCU_GPT12PISEL;
-#if(SCU_XML_VERSION >= 10109)
-#ifdef SCU_DMASRCSEL
-   SCU.DMASRCSEL.reg = (uint8) SCU_DMASRCSEL;
-#endif
-#ifdef SCU_DMASRCSEL2
+   SCU.DMASRCSEL.reg  = (uint8) SCU_DMASRCSEL;
    SCU.DMASRCSEL2.reg = (uint8) SCU_DMASRCSEL2;
-#endif
+
+#if(STD_ON == _ReSIM)
+   SCU.GPT12IEN.bit.T2IE = ReSim_T2IE;
+   SCU.GPT12IRC.bit.T2   = ReSim_T2;
+#else
 #endif
 }
 /*
