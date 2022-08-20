@@ -2260,7 +2260,7 @@ uint8 GPT12E_CapRel_Int_Sts(void){
          )
    );
 }
-
+*/
 void GPT12E_T2_Int_Clr(void){
    Field_Wrt8(
          &SCU.GPT12ICLR.reg
@@ -2269,7 +2269,7 @@ void GPT12E_T2_Int_Clr(void){
       ,  1u
    );
 }
-
+/*
 void GPT12E_T3_Int_Clr(void){
    Field_Wrt8(
          &SCU.GPT12ICLR.reg

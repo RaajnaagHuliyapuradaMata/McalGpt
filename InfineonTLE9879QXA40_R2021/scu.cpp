@@ -14,12 +14,15 @@
 //#include "RTE_Components.hpp"
 
 #include "scu_defines.hpp"
+#include "isr_defines.hpp"
+
 
 #include "tle987x.hpp"
 #include "sfr_access.hpp"
 #include "cmsis_misra.hpp"
 #include "bootrom.hpp"
 #include "wdt1.hpp"
+#include "gpt12e.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -461,6 +464,21 @@ void SCU_OpenPASSWD(void){
 
 void SCU_ClosePASSWD(void){
    Field_Wrt8all(&SCU.PASSWD.reg, PASSWD_Close);
+}
+
+void GPT1_IRQHandler(void){
+   if(
+         (uint8)1
+      == (uint8)SCU.GPT12IEN.bit.T2IE
+   ){
+      if(
+            (uint8)1
+         == (uint8)SCU.GPT12IRC.bit.T2
+      ){
+         GPT1_T2_CALLBACK();
+         GPT12E_T2_Int_Clr();
+      }
+   }
 }
 
 /******************************************************************************/

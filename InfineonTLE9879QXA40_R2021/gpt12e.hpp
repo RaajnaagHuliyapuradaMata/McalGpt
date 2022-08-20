@@ -143,6 +143,7 @@ extern void GPT12E_Init                    (void);
 extern bool GPT12E_T3_Interval_Timer_Setup (uint32 timer_interval_us);
 extern bool GPT12E_T6_Interval_Timer_Setup (uint32 timer_interval_us);
 extern void GPT12E_T2_Start                (void);
+extern void GPT12E_T2_Int_Clr              (void);
 
 /******************************************************************************/
 /* EOF                                                                        */
