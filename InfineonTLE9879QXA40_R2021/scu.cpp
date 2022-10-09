@@ -9,9 +9,6 @@
 #include "types.hpp"
 
 #include "scu.hpp"
-//#include "lin.hpp"
-//#include "pmu_defines.hpp"
-//#include "RTE_Components.hpp"
 
 #include "scu_defines.hpp"
 #include "isr_defines.hpp"
@@ -265,8 +262,7 @@ void SCU_Init(void){
    void __attribute__((noreturn)) SCU_EnterSleepMode(void)
 #else
    void SCU_EnterSleepMode(void)
-#endif
-{
+#endif{
    uint8 u8_loc_pmcon0;
    uint8 dummy;
    dummy = 0;
@@ -396,12 +392,10 @@ bool SCU_ChangeNVMProtection(uint32 mode, uint32 action){
       else if(mode == NVM_CODE_READ){
          result = USER_CFLASH_RD_PROT_DIS((uint16) SCU_CFLASH_WPROT_PW);
       }
-      else
-      {
+      else{
       }
    }
-   else
-   {
+   else{
       if(mode == NVM_DATA_WRITE){
          result = USER_DFLASH_WR_PROT_EN((uint16) SCU_DFLASH_WPROT_PW);
       }

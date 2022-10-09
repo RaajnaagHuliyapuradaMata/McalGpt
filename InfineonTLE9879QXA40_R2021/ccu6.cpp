@@ -202,7 +202,7 @@ void CCU6_Ch0_CapCom_Mode_Sel(uint16 msel60){
 }
 
 uint16 CCU6_T12_Count_Value_Get(void){
-  return( u16_Field_Rd16(&CCU6.T12.reg, (uint16)CCU6_T12_T12CV_Pos, (uint16)CCU6_T12_T12CV_Msk) );
+   return( u16_Field_Rd16(&CCU6.T12.reg, (uint16)CCU6_T12_T12CV_Pos, (uint16)CCU6_T12_T12CV_Msk) );
 }
 
 void CCU6_T12_Count_Value_Set(uint16 t12cv){
@@ -210,7 +210,7 @@ void CCU6_T12_Count_Value_Set(uint16 t12cv){
 }
 
 uint16 CCU6_T12_Period_Value_Get(void){
-  return( u16_Field_Rd16(&CCU6.T12PR.reg, (uint16)CCU6_T12PR_T12PV_Pos, (uint16)CCU6_T12PR_T12PV_Msk) );
+   return( u16_Field_Rd16(&CCU6.T12PR.reg, (uint16)CCU6_T12PR_T12PV_Pos, (uint16)CCU6_T12PR_T12PV_Msk) );
 }
 
 void CCU6_T12_Period_Value_Set(uint16 t12pr){
@@ -218,7 +218,7 @@ void CCU6_T12_Period_Value_Set(uint16 t12pr){
 }
 
 uint16 CCU6_Ch0_Value_Get(void){
-  return( u16_Field_Rd16(&CCU6.CC60R.reg, (uint16)CCU6_CC60R_CCV_Pos, (uint16)CCU6_CC60R_CCV_Msk) );
+   return( u16_Field_Rd16(&CCU6.CC60R.reg, (uint16)CCU6_CC60R_CCV_Pos, (uint16)CCU6_CC60R_CCV_Msk) );
 }
 
 void CCU6_Ch0_Value_Set(uint16 cc60sr){
@@ -226,7 +226,7 @@ void CCU6_Ch0_Value_Set(uint16 cc60sr){
 }
 
 uint16 CCU6_Ch1_Value_Get(void){
-  return( u16_Field_Rd16(&CCU6.CC61R.reg, (uint16)CCU6_CC61R_CCV_Pos, (uint16)CCU6_CC61R_CCV_Msk) );
+   return( u16_Field_Rd16(&CCU6.CC61R.reg, (uint16)CCU6_CC61R_CCV_Pos, (uint16)CCU6_CC61R_CCV_Msk) );
 }
 
 void CCU6_Ch1_Value_Set(uint16 cc61sr){
@@ -234,7 +234,7 @@ void CCU6_Ch1_Value_Set(uint16 cc61sr){
 }
 
 uint16 CCU6_Ch2_Value_Get(void){
-  return( u16_Field_Rd16(&CCU6.CC62R.reg, (uint16)CCU6_CC62R_CCV_Pos, (uint16)CCU6_CC62R_CCV_Msk) );
+   return( u16_Field_Rd16(&CCU6.CC62R.reg, (uint16)CCU6_CC62R_CCV_Pos, (uint16)CCU6_CC62R_CCV_Msk) );
 }
 
 void CCU6_Ch2_Value_Set(uint16 cc62sr){
@@ -242,7 +242,7 @@ void CCU6_Ch2_Value_Set(uint16 cc62sr){
 }
 
 uint8 CCU6_Deadtime_Get(void){
-  return( u8_Field_Rd16(&CCU6.T12DTC.reg, (uint16)CCU6_T12DTC_DTM_Pos, (uint16)CCU6_T12DTC_DTM_Msk) );
+   return( u8_Field_Rd16(&CCU6.T12DTC.reg, (uint16)CCU6_T12DTC_DTM_Pos, (uint16)CCU6_T12DTC_DTM_Msk) );
 }
 
 void CCU6_Deadtime_Set(uint16 dtm){
@@ -274,19 +274,19 @@ void CCU6_Ch2_Deadtime_Dis(void){
 }
 
 uint8 CCU6_Ch0_Deadtime_Sts(void){
-  return( u1_Field_Rd16(&CCU6.T12DTC.reg, (uint8)CCU6_T12DTC_DTR0_Pos, (uint16)CCU6_T12DTC_DTR0_Msk) );
+   return( u1_Field_Rd16(&CCU6.T12DTC.reg, (uint8)CCU6_T12DTC_DTR0_Pos, (uint16)CCU6_T12DTC_DTR0_Msk) );
 }
 
 uint8 CCU6_Ch1_Deadtime_Sts(void){
-  return( u1_Field_Rd16(&CCU6.T12DTC.reg, (uint16)CCU6_T12DTC_DTR1_Pos, (uint16)CCU6_T12DTC_DTR1_Msk) );
+   return( u1_Field_Rd16(&CCU6.T12DTC.reg, (uint16)CCU6_T12DTC_DTR1_Pos, (uint16)CCU6_T12DTC_DTR1_Msk) );
 }
 
 uint8 CCU6_Ch2_Deadtime_Sts(void){
-  return( u1_Field_Rd16(&CCU6.T12DTC.reg, (uint16)CCU6_T12DTC_DTR2_Pos, (uint16)CCU6_T12DTC_DTR2_Msk) );
+   return( u1_Field_Rd16(&CCU6.T12DTC.reg, (uint16)CCU6_T12DTC_DTR2_Pos, (uint16)CCU6_T12DTC_DTR2_Msk) );
 }
 
 uint16 CCU6_T13_Count_Value_Get(void){
-  return( u16_Field_Rd16(&CCU6.T13.reg, (uint16)CCU6_T13_T13CV_Pos, (uint16)CCU6_T13_T13CV_Msk) );
+   return( u16_Field_Rd16(&CCU6.T13.reg, (uint16)CCU6_T13_T13CV_Pos, (uint16)CCU6_T13_T13CV_Msk) );
 }
 
 void CCU6_T13_Count_Value_Set(uint16 t13cv){
@@ -294,7 +294,7 @@ void CCU6_T13_Count_Value_Set(uint16 t13cv){
 }
 
 uint16 CCU6_T13_Period_Value_Get(void){
-  return( u16_Field_Rd16(&CCU6.T13PR.reg, (uint16)CCU6_T13PR_T13PV_Pos, (uint16)CCU6_T13PR_T13PV_Msk) );
+   return( u16_Field_Rd16(&CCU6.T13PR.reg, (uint16)CCU6_T13PR_T13PV_Pos, (uint16)CCU6_T13PR_T13PV_Msk) );
 }
 
 void CCU6_T13_Period_Value_Set(uint16 t13pr){
@@ -302,7 +302,7 @@ void CCU6_T13_Period_Value_Set(uint16 t13pr){
 }
 
 uint16 CCU6_Ch3_Value_Get(void){
-  return( u16_Field_Rd16(&CCU6.CC63R.reg, (uint16)CCU6_CC63R_CCV_Pos, (uint16)CCU6_CC63R_CCV_Msk) );
+   return( u16_Field_Rd16(&CCU6.CC63R.reg, (uint16)CCU6_CC63R_CCV_Pos, (uint16)CCU6_CC63R_CCV_Msk) );
 }
 
 void CCU6_Ch3_Value_Set(uint16 cc63sr){
@@ -310,31 +310,31 @@ void CCU6_Ch3_Value_Set(uint16 cc63sr){
 }
 
 uint8 CCU6_Ch0_CompState_Sts(void){
-  return( u1_Field_Rd16(&CCU6.CMPSTAT.reg, (uint16)CCU6_CMPSTAT_CC60ST_Pos, (uint16)CCU6_CMPSTAT_CC60ST_Msk) );
+   return( u1_Field_Rd16(&CCU6.CMPSTAT.reg, (uint16)CCU6_CMPSTAT_CC60ST_Pos, (uint16)CCU6_CMPSTAT_CC60ST_Msk) );
 }
 
 uint8 CCU6_Ch1_CompState_Sts(void){
-  return( u1_Field_Rd16(&CCU6.CMPSTAT.reg, (uint16)CCU6_CMPSTAT_CC61ST_Pos, (uint16)CCU6_CMPSTAT_CC61ST_Msk) );
+   return( u1_Field_Rd16(&CCU6.CMPSTAT.reg, (uint16)CCU6_CMPSTAT_CC61ST_Pos, (uint16)CCU6_CMPSTAT_CC61ST_Msk) );
 }
 
 uint8 CCU6_Ch2_CompState_Sts(void){
-  return( u1_Field_Rd16(&CCU6.CMPSTAT.reg, (uint16)CCU6_CMPSTAT_CC62ST_Pos, (uint16)CCU6_CMPSTAT_CC62ST_Msk) );
+   return( u1_Field_Rd16(&CCU6.CMPSTAT.reg, (uint16)CCU6_CMPSTAT_CC62ST_Pos, (uint16)CCU6_CMPSTAT_CC62ST_Msk) );
 }
 
 uint8 CCU6_Ch3_CompState_Sts(void){
-  return( u1_Field_Rd16(&CCU6.CMPSTAT.reg, (uint16)CCU6_CMPSTAT_CC63ST_Pos, (uint16)CCU6_CMPSTAT_CC63ST_Msk) );
+   return( u1_Field_Rd16(&CCU6.CMPSTAT.reg, (uint16)CCU6_CMPSTAT_CC63ST_Pos, (uint16)CCU6_CMPSTAT_CC63ST_Msk) );
 }
 
 uint8 CCU6_Hall_Ch0_Sts(void){
-  return( u1_Field_Rd16(&CCU6.CMPSTAT.reg, (uint16)CCU6_CMPSTAT_CCPOS0_Pos, (uint16)CCU6_CMPSTAT_CCPOS0_Msk) );
+   return( u1_Field_Rd16(&CCU6.CMPSTAT.reg, (uint16)CCU6_CMPSTAT_CCPOS0_Pos, (uint16)CCU6_CMPSTAT_CCPOS0_Msk) );
 }
 
 uint8 CCU6_Hall_Ch1_Sts(void){
-  return( u1_Field_Rd16(&CCU6.CMPSTAT.reg, (uint16)CCU6_CMPSTAT_CCPOS1_Pos, (uint16)CCU6_CMPSTAT_CCPOS1_Msk) );
+   return( u1_Field_Rd16(&CCU6.CMPSTAT.reg, (uint16)CCU6_CMPSTAT_CCPOS1_Pos, (uint16)CCU6_CMPSTAT_CCPOS1_Msk) );
 }
 
 uint8 CCU6_Hall_Ch2_Sts(void){
-  return( u1_Field_Rd16(&CCU6.CMPSTAT.reg, (uint16)CCU6_CMPSTAT_CCPOS2_Pos, (uint16)CCU6_CMPSTAT_CCPOS2_Msk) );
+   return( u1_Field_Rd16(&CCU6.CMPSTAT.reg, (uint16)CCU6_CMPSTAT_CCPOS2_Pos, (uint16)CCU6_CMPSTAT_CCPOS2_Msk) );
 }
 
 void CCU6_T12_PWMMode_Set(TCCU6_PWMMode mode){
@@ -427,23 +427,23 @@ void CCU6_T13_Prescaler_Dis(void){
 }
 
 uint8 CCU6_T12_Run_Sts(void){
-  return( u1_Field_Rd16(&CCU6.TCTR0.reg, (uint16)CCU6_TCTR0_T12R_Pos, (uint16)CCU6_TCTR0_T12R_Msk) );
+   return( u1_Field_Rd16(&CCU6.TCTR0.reg, (uint16)CCU6_TCTR0_T12R_Pos, (uint16)CCU6_TCTR0_T12R_Msk) );
 }
 
 uint8 CCU6_T12_Str_Sts(void){
-  return( u1_Field_Rd16(&CCU6.TCTR0.reg, (uint16)CCU6_TCTR0_STE12_Pos, (uint16)CCU6_TCTR0_STE12_Msk) );
+   return( u1_Field_Rd16(&CCU6.TCTR0.reg, (uint16)CCU6_TCTR0_STE12_Pos, (uint16)CCU6_TCTR0_STE12_Msk) );
 }
 
 uint8 CCU6_T12_Count_Dir_Sts(void){
-  return( u1_Field_Rd16(&CCU6.TCTR0.reg, (uint16)CCU6_TCTR0_CDIR_Pos, (uint16)CCU6_TCTR0_CDIR_Msk) );
+   return( u1_Field_Rd16(&CCU6.TCTR0.reg, (uint16)CCU6_TCTR0_CDIR_Pos, (uint16)CCU6_TCTR0_CDIR_Msk) );
 }
 
 uint8 CCU6_T13_Run_Sts(void){
-  return( u1_Field_Rd16(&CCU6.TCTR0.reg, (uint16)CCU6_TCTR0_T13R_Pos, (uint16)CCU6_TCTR0_T13R_Msk) );
+   return( u1_Field_Rd16(&CCU6.TCTR0.reg, (uint16)CCU6_TCTR0_T13R_Pos, (uint16)CCU6_TCTR0_T13R_Msk) );
 }
 
 uint8 CCU6_T13_Str_Sts(void){
-  return( u1_Field_Rd16(&CCU6.TCTR0.reg, (uint16)CCU6_TCTR0_STE13_Pos, (uint16)CCU6_TCTR0_STE13_Msk) );
+   return( u1_Field_Rd16(&CCU6.TCTR0.reg, (uint16)CCU6_TCTR0_STE13_Pos, (uint16)CCU6_TCTR0_STE13_Msk) );
 }
 
 void CCU6_T12_Single_Shot_En(void){
@@ -632,19 +632,19 @@ void CCU6_MCM_Hall_Str_HW_En(void){
 }
 
 uint8 CCU6_MCM_PWM_Pattern_Sts(void){
-  return( u8_Field_Rd16(&CCU6.MCMOUT.reg, (uint16)CCU6_MCMOUT_MCMP_Pos, (uint16)CCU6_MCMOUT_MCMP_Msk) );
+   return( u8_Field_Rd16(&CCU6.MCMOUT.reg, (uint16)CCU6_MCMOUT_MCMP_Pos, (uint16)CCU6_MCMOUT_MCMP_Msk) );
 }
 
 uint8 CCU6_MCM_PWM_Str_Req_Sts(void){
-  return( u8_Field_Rd16(&CCU6.MCMOUT.reg, (uint16)CCU6_MCMOUT_R_Pos, (uint16)CCU6_MCMOUT_R_Msk) );
+   return( u8_Field_Rd16(&CCU6.MCMOUT.reg, (uint16)CCU6_MCMOUT_R_Pos, (uint16)CCU6_MCMOUT_R_Msk) );
 }
 
 uint8 CCU6_MCM_Expected_Hall_Sts(void){
-  return( u8_Field_Rd16(&CCU6.MCMOUT.reg, (uint16)CCU6_MCMOUT_EXPH_Pos, (uint16)CCU6_MCMOUT_EXPH_Msk) );
+   return( u8_Field_Rd16(&CCU6.MCMOUT.reg, (uint16)CCU6_MCMOUT_EXPH_Pos, (uint16)CCU6_MCMOUT_EXPH_Msk) );
 }
 
 uint8 CCU6_MCM_Current_Hall_Sts(void){
-  return( u8_Field_Rd16(&CCU6.MCMOUT.reg, (uint16)CCU6_MCMOUT_CURH_Pos, (uint16)CCU6_MCMOUT_CURH_Msk) );
+   return( u8_Field_Rd16(&CCU6.MCMOUT.reg, (uint16)CCU6_MCMOUT_CURH_Pos, (uint16)CCU6_MCMOUT_CURH_Msk) );
 }
 
 void CCU6_MCM_Switch_Sel(uint16 swsel){
@@ -712,67 +712,67 @@ void CCU6_MCM_Str_T13_Up_Cnt_Dis(void){
 }
 
 uint8 CCU6_T12_CM_CC60_Int_Rise_Sts(void){
-  return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_ICC60R_Pos, (uint16)CCU6_IS_ICC60R_Msk) );
+   return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_ICC60R_Pos, (uint16)CCU6_IS_ICC60R_Msk) );
 }
 
 uint8 CCU6_T12_CM_CC61_Int_Rise_Sts(void){
-  return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_ICC61R_Pos, (uint16)CCU6_IS_ICC61R_Msk) );
+   return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_ICC61R_Pos, (uint16)CCU6_IS_ICC61R_Msk) );
 }
 
 uint8 CCU6_T12_CM_CC62_Int_Rise_Sts(void){
-  return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_ICC62R_Pos, (uint16)CCU6_IS_ICC62R_Msk) );
+   return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_ICC62R_Pos, (uint16)CCU6_IS_ICC62R_Msk) );
 }
 
 uint8 CCU6_T12_CM_CC60_Int_Fall_Sts(void){
-  return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_ICC60F_Pos, (uint16)CCU6_IS_ICC60F_Msk) );
+   return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_ICC60F_Pos, (uint16)CCU6_IS_ICC60F_Msk) );
 }
 
 uint8 CCU6_T12_CM_CC61_Int_Fall_Sts(void){
-  return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_ICC61F_Pos, (uint16)CCU6_IS_ICC61F_Msk) );
+   return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_ICC61F_Pos, (uint16)CCU6_IS_ICC61F_Msk) );
 }
 
 uint8 CCU6_T12_CM_CC62_Int_Fall_Sts(void){
-  return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_ICC62F_Pos, (uint16)CCU6_IS_ICC62F_Msk) );
+   return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_ICC62F_Pos, (uint16)CCU6_IS_ICC62F_Msk) );
 }
 
 uint8 CCU6_T12_OM_Int_Sts(void){
-  return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_T12OM_Pos, (uint16)CCU6_IS_T12OM_Msk) );
+   return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_T12OM_Pos, (uint16)CCU6_IS_T12OM_Msk) );
 }
 
 uint8 CCU6_T12_PM_Int_Sts(void){
-  return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_T12PM_Pos, (uint16)CCU6_IS_T12PM_Msk) );
+   return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_T12PM_Pos, (uint16)CCU6_IS_T12PM_Msk) );
 }
 
 uint8 CCU6_T13_CM_Int_Sts(void){
-  return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_T13CM_Pos, (uint16)CCU6_IS_T13CM_Msk) );
+   return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_T13CM_Pos, (uint16)CCU6_IS_T13CM_Msk) );
 }
 
 uint8 CCU6_T13_PM_Int_Sts(void){
-  return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_T13PM_Pos, (uint16)CCU6_IS_T13PM_Msk) );
+   return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_T13PM_Pos, (uint16)CCU6_IS_T13PM_Msk) );
 }
 
 uint8 CCU6_Trap_Flag_Int_Sts(void){
-  return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_TRPF_Pos, (uint16)CCU6_IS_TRPF_Msk) );
+   return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_TRPF_Pos, (uint16)CCU6_IS_TRPF_Msk) );
 }
 
 uint8 CCU6_Trap_State_Int_Sts(void){
-  return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_TRPS_Pos, (uint16)CCU6_IS_TRPS_Msk) );
+   return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_TRPS_Pos, (uint16)CCU6_IS_TRPS_Msk) );
 }
 
 uint8 CCU6_Hall_Correct_Int_Sts(void){
-  return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_CHE_Pos, (uint16)CCU6_IS_CHE_Msk) );
+   return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_CHE_Pos, (uint16)CCU6_IS_CHE_Msk) );
 }
 
 uint8 CCU6_Hall_Wrong_Int_Sts(void){
-  return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_WHE_Pos, (uint16)CCU6_IS_WHE_Msk) );
+   return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_WHE_Pos, (uint16)CCU6_IS_WHE_Msk) );
 }
 
 uint8 CCU6_MCM_Idle_Int_Sts(void){
-  return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_IDLE_Pos, (uint16)CCU6_IS_IDLE_Msk) );
+   return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_IDLE_Pos, (uint16)CCU6_IS_IDLE_Msk) );
 }
 
 uint8 CCU6_MCM_Str_Int_Sts(void){
-  return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_STR_Pos, (uint16)CCU6_IS_STR_Msk) );
+   return( u1_Field_Rd16(&CCU6.IS.reg, (uint16)CCU6_IS_STR_Pos, (uint16)CCU6_IS_STR_Msk) );
 }
 
 void CCU6_T12_CM_CC60_Int_Rise_Set(void){
@@ -1090,35 +1090,28 @@ bool CCU6_IsT13Running(void){
     res = true;
   }
 
-  return(res);
+   return(res);
 }
 
 void CCU6_SetT13Trigger(uint16 Mask){
-
   Field_Wrt16(&CCU6.TCTR2.reg, 0, (uint16)0xFFFF, Mask);
 }
 
 void CCU6_SetT13Compare(uint16 Compare){
   if(Compare < CCU6_T13_Period_Value_Get()){
-
     CCU6_Ch3_Value_Set(Compare);
   }
   else{
-
     if(Compare <= (uint16)0xFFFE){
-
       CCU6_Ch3_Value_Set(Compare);
 
       CCU6_T13_Period_Value_Set((Compare + 1u));
     }
     else{
-
-
       CCU6_Ch3_Value_Set((uint16)0xFFFE);
       CCU6_T13_Period_Value_Set((uint16)0xFFFF);
     }
   }
-
 
   CCU6_T13_Str_En();
 }
@@ -1128,11 +1121,11 @@ void CCU6_SetT12T13ControlBits(uint16 Mask){
 }
 
 uint32 CCU6_ReadHallReg(void){
-  return(uint32)u16_Field_Rd16(&CCU6.CMPSTAT.reg, (uint8)CCU6_CMPSTAT_CCPOS0_Pos, 0x38u);
+   return(uint32)u16_Field_Rd16(&CCU6.CMPSTAT.reg, (uint8)CCU6_CMPSTAT_CCPOS0_Pos, 0x38u);
 }
 
 uint16 CCU6_ReadMultichannelPatterns(void){
-  return u16_Field_Rd16(&CCU6.MCMOUT.reg, 0, (uint16)0xFFFF);
+   return u16_Field_Rd16(&CCU6.MCMOUT.reg, 0, (uint16)0xFFFF);
 }
 
 void CCU6_WriteMultichannelPatterns(uint16 Patterns){

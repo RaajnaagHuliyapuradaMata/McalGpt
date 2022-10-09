@@ -88,7 +88,7 @@ bool GPT12E_T3_Interval_Timer_Setup(uint32 timer_interval_us){
     GPT12E_T2_Mode_Reload_Input_Rising_T3Out_En();
     res = true;
   }
-  return(res);
+   return(res);
 }
 
 bool GPT12E_T6_Interval_Timer_Setup(uint32 timer_interval_us){
@@ -116,7 +116,7 @@ bool GPT12E_T6_Interval_Timer_Setup(uint32 timer_interval_us){
     GPT12E_T6_Reload_En();
     res = true;
   }
-  return(res);
+   return(res);
 }
 
 void GPT12E_GPT1_Clk_Prescaler_Sel(

@@ -7,37 +7,32 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-//#include "tle987x.hpp"
-//#include "types.hpp"
-//#include "ccu6_defines.hpp"
-//#include "sfr_access.hpp"
-//#include "tle_variants.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define CCU6_MASK_TCTR4_STOP_T12       (CCU6_TCTR4_T12RR_Msk)
-#define CCU6_MASK_TCTR4_START_T12      (CCU6_TCTR4_T12RS_Msk)
-#define CCU6_MASK_TCTR4_RESET_T12      (CCU6_TCTR4_T12RES_Msk)
-#define CCU6_MASK_TCTR4_SHADOW_T12     (CCU6_TCTR4_T12STR_Msk)
-#define CCU6_MASK_TCTR4_STOP_T13       (CCU6_TCTR4_T13RR_Msk)
-#define CCU6_MASK_TCTR4_START_T13      (CCU6_TCTR4_T13RS_Msk)
-#define CCU6_MASK_TCTR4_RESET_T13      (CCU6_TCTR4_T13RES_Msk)
-#define CCU6_MASK_TCTR4_SHADOW_T13     (CCU6_TCTR4_T13STR_Msk)
-#define CCU6_MASK_MCMOUTS_SHADOW_HALL  (CCU6_MCMOUTS_STRHP_Msk)
-#define CCU6_MASK_MCMOUTS_SHADOW_OUT   (CCU6_MCMOUTS_STRMCM_Msk)
-#define CCU6_MASK_CC60                 ((uint16)1u << 0u)
-#define CCU6_MASK_COUT60               ((uint16)1u << 1u)
-#define CCU6_MASK_CC61                 ((uint16)1u << 2u)
-#define CCU6_MASK_COUT61               ((uint16)1u << 3u)
-#define CCU6_MASK_CC62                 ((uint16)1u << 4u)
-#define CCU6_MASK_COUT62               ((uint16)1u << 5u)
-#define CCU6_MASK_Ch0t                 CCU6_MASK_CC60
-#define CCU6_MASK_Ch0c                 CCU6_MASK_COUT60
-#define CCU6_MASK_Ch1t                 CCU6_MASK_CC61
-#define CCU6_MASK_Ch1c                 CCU6_MASK_COUT61
-#define CCU6_MASK_Ch2t                 CCU6_MASK_CC62
-#define CCU6_MASK_Ch2c                 CCU6_MASK_COUT62
+#define CCU6_MASK_TCTR4_STOP_T12                       (CCU6_TCTR4_T12RR_Msk)
+#define CCU6_MASK_TCTR4_START_T12                      (CCU6_TCTR4_T12RS_Msk)
+#define CCU6_MASK_TCTR4_RESET_T12                      (CCU6_TCTR4_T12RES_Msk)
+#define CCU6_MASK_TCTR4_SHADOW_T12                     (CCU6_TCTR4_T12STR_Msk)
+#define CCU6_MASK_TCTR4_STOP_T13                       (CCU6_TCTR4_T13RR_Msk)
+#define CCU6_MASK_TCTR4_START_T13                      (CCU6_TCTR4_T13RS_Msk)
+#define CCU6_MASK_TCTR4_RESET_T13                      (CCU6_TCTR4_T13RES_Msk)
+#define CCU6_MASK_TCTR4_SHADOW_T13                     (CCU6_TCTR4_T13STR_Msk)
+#define CCU6_MASK_MCMOUTS_SHADOW_HALL                  (CCU6_MCMOUTS_STRHP_Msk)
+#define CCU6_MASK_MCMOUTS_SHADOW_OUT                   (CCU6_MCMOUTS_STRMCM_Msk)
+#define CCU6_MASK_CC60                                 ((uint16)1u << 0u)
+#define CCU6_MASK_COUT60                               ((uint16)1u << 1u)
+#define CCU6_MASK_CC61                                 ((uint16)1u << 2u)
+#define CCU6_MASK_COUT61                               ((uint16)1u << 3u)
+#define CCU6_MASK_CC62                                 ((uint16)1u << 4u)
+#define CCU6_MASK_COUT62                               ((uint16)1u << 5u)
+#define CCU6_MASK_Ch0t                                 CCU6_MASK_CC60
+#define CCU6_MASK_Ch0c                                 CCU6_MASK_COUT60
+#define CCU6_MASK_Ch1t                                 CCU6_MASK_CC61
+#define CCU6_MASK_Ch1c                                 CCU6_MASK_COUT61
+#define CCU6_MASK_Ch2t                                 CCU6_MASK_CC62
+#define CCU6_MASK_Ch2c                                 CCU6_MASK_COUT62
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -47,8 +42,8 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 typedef enum{
-  CCU6_CC60_0_P04  = 0u,
-  CCU6_CC60_1_P23  = 1u
+  CCU6_CC60_0_P04  = 0u
+   ,  CCU6_CC60_1_P23  = 1u
 }TCCU6_Ch0_Input;
 
 typedef enum{
@@ -56,159 +51,159 @@ typedef enum{
 }TCCU6_Ch1_Input;
 
 typedef enum{
-  CCU6_CC62_0_P13  = 0u,
-  CCU6_CC62_2_P22  = 2u
+  CCU6_CC62_0_P13  = 0u
+   ,  CCU6_CC62_2_P22  = 2u
 }TCCU6_Ch2_Input;
 
 typedef enum{
-  CCU6_CTRAP_0_P24  = 0u,
-  CCU6_CTRAP_1_P23  = 1u
+  CCU6_CTRAP_0_P24  = 0u
+   ,  CCU6_CTRAP_1_P23  = 1u
 }TCCU6_Trap_Input;
 
 typedef enum{
-  CCU6_CCPOS0_1_P03  = 1u,
-  CCU6_CCPOS0_2_P13  = 2u,
-  CCU6_CCPOS0_3_P20  = 3u
+  CCU6_CCPOS0_1_P03  = 1u
+   ,  CCU6_CCPOS0_2_P13  = 2u
+   ,  CCU6_CCPOS0_3_P20  = 3u
 #if(UC_SERIES == TLE987)
-  ,
-  CCU6_CCPOS0_BEMF   = 3u
+  
+   ,  CCU6_CCPOS0_BEMF   = 3u
 #endif
 }TCCU6_Pos0_Input;
 
 typedef enum{
-  CCU6_CCPOS1_0_P23  = 0u,
-  CCU6_CCPOS1_1_P04  = 1u,
-  CCU6_CCPOS1_2_P14  = 2u
+  CCU6_CCPOS1_0_P23  = 0u
+   ,  CCU6_CCPOS1_1_P04  = 1u
+   ,  CCU6_CCPOS1_2_P14  = 2u
 #if(UC_SERIES == TLE987)
-  ,
-  CCU6_CCPOS1_BEMF   = 3u
+  
+   ,  CCU6_CCPOS1_BEMF   = 3u
 #endif
 }TCCU6_Pos1_Input;
 
 typedef enum{
-  CCU6_CCPOS2_1_P02  = 1u,
-  CCU6_CCPOS2_2_P12  = 2u,
-  CCU6_CCPOS2_3_P22  = 3u
+  CCU6_CCPOS2_1_P02  = 1u
+   ,  CCU6_CCPOS2_2_P12  = 2u
+   ,  CCU6_CCPOS2_3_P22  = 3u
 #if(UC_SERIES == TLE987)
-  ,
-  CCU6_CCPOS2_BEMF   = 3u
+  
+   ,  CCU6_CCPOS2_BEMF   = 3u
 #endif
 }TCCU6_Pos2_Input;
 
 typedef enum{
-  CCU6_T12HR_0_P00  = 0u,
-  CCU6_T12HR_2_P20  = 2u
+  CCU6_T12HR_0_P00  = 0u
+   ,  CCU6_T12HR_2_P20  = 2u
 }TCCU6_T12HR_Input;
 
 typedef enum{
-  CCU6_T13HR_0_P01  = 0u,
-  CCU6_T13HR_2_P22  = 2u
+  CCU6_T13HR_0_P01  = 0u
+   ,  CCU6_T13HR_2_P22  = 2u
 }TCCU6_T13HR_Input;
 
 typedef enum{
-  CCU6_T12_Prescaler      = 0u,
-  CCU6_TCTR4_T12CNT       = 1u,
-  CCU6_T12HR_Rising_Edge  = 2u,
-  CCU6_T12HR_Falling_Edge = 3u
+  CCU6_T12_Prescaler      = 0u
+   ,  CCU6_TCTR4_T12CNT       = 1u
+   ,  CCU6_T12HR_Rising_Edge  = 2u
+   ,  CCU6_T12HR_Falling_Edge = 3u
 }TCCU6_T12_Cnt_Input;
 
 typedef enum{
-  CCU6_T13_Prescaler      = 0u,
-  CCU6_TCTR4_T13CNT       = 1u,
-  CCU6_T13HR_Rising_Edge  = 2u,
-  CCU6_T13HR_Falling_Edge = 3u
+  CCU6_T13_Prescaler      = 0u
+   ,  CCU6_TCTR4_T13CNT       = 1u
+   ,  CCU6_T13HR_Rising_Edge  = 2u
+   ,  CCU6_T13HR_Falling_Edge = 3u
 }TCCU6_T13_Cnt_Input;
 
 typedef enum{
-  CCU6_T12HR_D_A      = 0u,
-  CCU6_T12HR_H_E      = 1u
+  CCU6_T12HR_D_A      = 0u
+   ,  CCU6_T12HR_H_E      = 1u
 }TCCU6_T12_Ext_Input;
 
 typedef enum{
-  CCU6_T13HR_D_A      = 0u,
-  CCU6_T13HR_H_E      = 1u
+  CCU6_T13HR_D_A      = 0u
+   ,  CCU6_T13HR_H_E      = 1u
 }TCCU6_T13_Ext_Input;
 
 typedef enum{
-  CCU6_CCPOS0x_Any_Edge     = 0u,
-  CCU6_T13_CM               = 1u,
-  CCU6_T13_PM               = 2u,
-  CCU6_HW_Hall_Sampling_Off = 3u,
-  CCU6_T12_PM               = 4u,
-  CCU6_T12_OM               = 5u,
-  CCU6_T12_CM_Ch1_up        = 6u,
-  CCU6_T12_CM_Ch1_down      = 7u
+  CCU6_CCPOS0x_Any_Edge     = 0u
+   ,  CCU6_T13_CM               = 1u
+   ,  CCU6_T13_PM               = 2u
+   ,  CCU6_HW_Hall_Sampling_Off = 3u
+   ,  CCU6_T12_PM               = 4u
+   ,  CCU6_T12_OM               = 5u
+   ,  CCU6_T12_CM_Ch1_up        = 6u
+   ,  CCU6_T12_CM_Ch1_down      = 7u
 }TCCU6_HSYNC;
 
 typedef enum{
-  CCU6_Clk_Div_1   = 0,
-  CCU6_Clk_Div_2   = 1,
-  CCU6_Clk_Div_4   = 2,
-  CCU6_Clk_Div_8   = 3,
-  CCU6_Clk_Div_16  = 4,
-  CCU6_Clk_Div_32  = 5,
-  CCU6_Clk_Div_64  = 6,
-  CCU6_Clk_Div_128 = 7
+  CCU6_Clk_Div_1   = 0
+   ,  CCU6_Clk_Div_2   = 1
+   ,  CCU6_Clk_Div_4   = 2
+   ,  CCU6_Clk_Div_8   = 3
+   ,  CCU6_Clk_Div_16  = 4
+   ,  CCU6_Clk_Div_32  = 5
+   ,  CCU6_Clk_Div_64  = 6
+   ,  CCU6_Clk_Div_128 = 7
 }TCCU6_Clk_Prescaler;
 
 typedef enum{
-  CCU6_T13TEC_No_Trigger = 0,
-  CCU6_T13TEC_T12_CM_Ch0 = 1,
-  CCU6_T13TEC_T12_CM_Ch1 = 2,
-  CCU6_T13TEC_T12_CM_Ch2 = 3,
-  CCU6_T13TEC_T12_CM_Chx = 4,
-  CCU6_T13TEC_T12_PM     = 5,
-  CCU6_T13TEC_T12_ZM     = 6,
-  CCU6_T13TEC_CCPOSx     = 7
+  CCU6_T13TEC_No_Trigger = 0
+   ,  CCU6_T13TEC_T12_CM_Ch0 = 1
+   ,  CCU6_T13TEC_T12_CM_Ch1 = 2
+   ,  CCU6_T13TEC_T12_CM_Ch2 = 3
+   ,  CCU6_T13TEC_T12_CM_Chx = 4
+   ,  CCU6_T13TEC_T12_PM     = 5
+   ,  CCU6_T13TEC_T12_ZM     = 6
+   ,  CCU6_T13TEC_CCPOSx     = 7
 }TCCU6_T13TEC;
 
 typedef enum{
-  CCU6_T13ED_No_Action   = 0,
-  CCU6_T13ED_T12_Up      = 1,
-  CCU6_T13ED_T12_Down    = 2,
-  CCU6_T13ED_T12_UpDown  = 3
+  CCU6_T13ED_No_Action   = 0
+   ,  CCU6_T13ED_T12_Up      = 1
+   ,  CCU6_T13ED_T12_Down    = 2
+   ,  CCU6_T13ED_T12_UpDown  = 3
 }TCCU6_T13ED;
 
 typedef enum{
-  CCU6_T12RSEL_Dis        = 0,
-  CCU6_T12RSEL_T12HR_Rise = 1,
-  CCU6_T12RSEL_T12HR_Fall = 2,
-  CCU6_T12RSEL_T12HR_Any  = 3
+  CCU6_T12RSEL_Dis        = 0
+   ,  CCU6_T12RSEL_T12HR_Rise = 1
+   ,  CCU6_T12RSEL_T12HR_Fall = 2
+   ,  CCU6_T12RSEL_T12HR_Any  = 3
 }TCCU6_T12RSEL;
 
 typedef enum{
-  CCU6_T13RSEL_Dis        = 0,
-  CCU6_T13RSEL_T13HR_Rise = 1,
-  CCU6_T13RSEL_T13HR_Fall = 2,
-  CCU6_T13RSEL_T13HR_Any  = 3
+  CCU6_T13RSEL_Dis        = 0
+   ,  CCU6_T13RSEL_T13HR_Rise = 1
+   ,  CCU6_T13RSEL_T13HR_Fall = 2
+   ,  CCU6_T13RSEL_T13HR_Any  = 3
 }TCCU6_T13RSEL;
 
 typedef enum{
-  CCU6_PSL63_Low  = 0,
-  CCU6_PSL63_High = 1
+  CCU6_PSL63_Low  = 0
+   ,  CCU6_PSL63_High = 1
 }TCCU6_PSL63;
 
 typedef enum{
-  CCU6_SWSEL_No_Action    = 0,
-  CCU6_SWSEL_Correct_Hall = 1,
-  CCU6_SWSEL_T13_PM       = 2,
-  CCU6_SWSEL_T12_OM       = 3,
-  CCU6_SWSEL_T12_Ch1_CM   = 4,
-  CCU6_SWSEL_T12_PM       = 5
+  CCU6_SWSEL_No_Action    = 0
+   ,  CCU6_SWSEL_Correct_Hall = 1
+   ,  CCU6_SWSEL_T13_PM       = 2
+   ,  CCU6_SWSEL_T12_OM       = 3
+   ,  CCU6_SWSEL_T12_Ch1_CM   = 4
+   ,  CCU6_SWSEL_T12_PM       = 5
 }TCCU6_MCM_SWSEL;
 
 typedef enum{
-  CCU6_Node0 = 0,
-  CCU6_Node1 = 1,
-  CCU6_Node2 = 2,
-  CCU6_Node3 = 3
+  CCU6_Node0 = 0
+   ,  CCU6_Node1 = 1
+   ,  CCU6_Node2 = 2
+   ,  CCU6_Node3 = 3
 }TCCU6_Node_Sel;
 
 typedef enum{
-  CCU6_T12_ActiveLeftAligned  = 0x15,
-  CCU6_T12_ActiveRightAligned  = 0x2A,
-  CCU6_T12_ActiveCenterAligned  = 0x2A,
-  CCU6_T12_ActiveCenterAlignedInverted  = 0x15
+  CCU6_T12_ActiveLeftAligned  = 0x15
+   ,  CCU6_T12_ActiveRightAligned  = 0x2A
+   ,  CCU6_T12_ActiveCenterAligned  = 0x2A
+   ,  CCU6_T12_ActiveCenterAlignedInverted  = 0x15
 }TCCU6_PWMMode;
 
 /******************************************************************************/
