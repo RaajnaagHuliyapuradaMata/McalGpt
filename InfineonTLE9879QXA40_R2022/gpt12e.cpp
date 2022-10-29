@@ -14,7 +14,7 @@
 #include "sfr_access.hpp"
 
 #include "Mat.hpp" //TBD: remove
-#include "ApplSwcFoc.hpp"
+#include "ApplSwcFoc_tbd.hpp"
 
 #include "uC_Gpt.hpp"
 #include "uC_Scu.hpp"
