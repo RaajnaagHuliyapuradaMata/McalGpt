@@ -47,6 +47,10 @@ VAR(module_McalGpt, MCALGPT_VAR) McalGpt;
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
+extern void SCU_Init    (void); //TBD: use interface headers as per architecture
+extern void CCU6_Init   (void); //TBD: use interface headers as per architecture
+extern void GPT12E_Init (void); //TBD: use interface headers as per architecture
+
 FUNC(void, MCALGPT_CODE) module_McalGpt::InitFunction(
       CONSTP2CONST(ConstModule_TypeAbstract, MCALGPT_CONST,       MCALGPT_APPL_CONST) lptrConstModule
    ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALGPT_CONFIG_DATA, MCALGPT_APPL_CONST) lptrCfgModule
@@ -74,6 +78,9 @@ FUNC(void, MCALGPT_CODE) module_McalGpt::InitFunction(
          );
 #endif
       }
+      SCU_Init();
+      CCU6_Init();
+      GPT12E_Init();
 #if(STD_ON == McalGpt_InitCheck)
       IsInitDone = E_OK;
    }

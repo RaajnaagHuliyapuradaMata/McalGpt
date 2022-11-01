@@ -1,5 +1,5 @@
 /******************************************************************************/
-/* File   : Template.hpp                                                      */
+/* File   : ccu6.cpp                                                          */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
@@ -9,12 +9,10 @@
 #include "types.hpp"
 
 #include "ccu6.hpp"
-
-#include "uC_Ccu6.hpp"
+#include "ccu6_defines.hpp"
 
 #include "sfr_access.hpp"
-
-#include "ccu6_defines.hpp"
+#include "uC_Ccu6.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
