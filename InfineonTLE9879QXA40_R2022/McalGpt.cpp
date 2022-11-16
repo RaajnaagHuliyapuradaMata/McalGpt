@@ -122,6 +122,7 @@ FUNC(void, MCALGPT_CODE) module_McalGpt::DeInitFunction(
 #endif
 }
 
+#include "isr.hpp" //TBD: move to ISR
 FUNC(void, MCALGPT_CODE) module_McalGpt::MainFunction(
    void
 ){
@@ -131,6 +132,9 @@ FUNC(void, MCALGPT_CODE) module_McalGpt::MainFunction(
       == IsInitDone
    ){
 #endif
+
+   GPT1_IRQHandler(); //TBD: move to ISR
+
 #if(STD_ON == McalGpt_InitCheck)
    }
    else{
