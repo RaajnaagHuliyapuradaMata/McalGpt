@@ -219,27 +219,27 @@ void CCU6_T12_Period_Value_Set(uint16 t12pr){
 uint16 CCU6_Ch0_Value_Get(void){
    return( u16_Field_Rd16(&CCU6.CC60R.reg, (uint16)CCU6_CC60R_CCV_Pos, (uint16)CCU6_CC60R_CCV_Msk) );
 }
-
+*/
 void CCU6_Ch0_Value_Set(uint16 cc60sr){
   Field_Wrt16(&CCU6.CC60SR.reg, (uint16)CCU6_CC60R_CCV_Pos, (uint16)CCU6_CC60R_CCV_Msk, cc60sr);
 }
-
+/*
 uint16 CCU6_Ch1_Value_Get(void){
    return( u16_Field_Rd16(&CCU6.CC61R.reg, (uint16)CCU6_CC61R_CCV_Pos, (uint16)CCU6_CC61R_CCV_Msk) );
 }
-
+*/
 void CCU6_Ch1_Value_Set(uint16 cc61sr){
   Field_Wrt16(&CCU6.CC61SR.reg, (uint16)CCU6_CC61R_CCV_Pos, (uint16)CCU6_CC61R_CCV_Msk, cc61sr);
 }
-
+/*
 uint16 CCU6_Ch2_Value_Get(void){
    return( u16_Field_Rd16(&CCU6.CC62R.reg, (uint16)CCU6_CC62R_CCV_Pos, (uint16)CCU6_CC62R_CCV_Msk) );
 }
-
+*/
 void CCU6_Ch2_Value_Set(uint16 cc62sr){
   Field_Wrt16(&CCU6.CC62SR.reg, (uint16)CCU6_CC62R_CCV_Pos, (uint16)CCU6_CC62R_CCV_Msk, cc62sr);
 }
-
+/*
 uint8 CCU6_Deadtime_Get(void){
    return( u8_Field_Rd16(&CCU6.T12DTC.reg, (uint16)CCU6_T12DTC_DTM_Pos, (uint16)CCU6_T12DTC_DTM_Msk) );
 }
@@ -291,7 +291,7 @@ uint16 CCU6_T13_Count_Value_Get(void){
 void CCU6_T13_Count_Value_Set(uint16 t13cv){
   Field_Wrt16(&CCU6.T13.reg, (uint16)CCU6_T13_T13CV_Pos, (uint16)CCU6_T13_T13CV_Msk, t13cv);
 }
-
+*/
 uint16 CCU6_T13_Period_Value_Get(void){
    return( u16_Field_Rd16(&CCU6.T13PR.reg, (uint16)CCU6_T13PR_T13PV_Pos, (uint16)CCU6_T13PR_T13PV_Msk) );
 }
@@ -300,14 +300,15 @@ void CCU6_T13_Period_Value_Set(uint16 t13pr){
   Field_Wrt16(&CCU6.T13PR.reg, (uint16)CCU6_T13PR_T13PV_Pos, (uint16)CCU6_T13PR_T13PV_Msk, t13pr);
 }
 
+/*
 uint16 CCU6_Ch3_Value_Get(void){
    return( u16_Field_Rd16(&CCU6.CC63R.reg, (uint16)CCU6_CC63R_CCV_Pos, (uint16)CCU6_CC63R_CCV_Msk) );
 }
-
+*/
 void CCU6_Ch3_Value_Set(uint16 cc63sr){
   Field_Wrt16(&CCU6.CC63SR.reg, (uint16)CCU6_CC63R_CCV_Pos, (uint16)CCU6_CC63R_CCV_Msk, cc63sr);
 }
-
+/*
 uint8 CCU6_Ch0_CompState_Sts(void){
    return( u1_Field_Rd16(&CCU6.CMPSTAT.reg, (uint16)CCU6_CMPSTAT_CC60ST_Pos, (uint16)CCU6_CMPSTAT_CC60ST_Msk) );
 }
@@ -1049,14 +1050,15 @@ void CCU6_StopTmr_T12(void){
 void CCU6_StopTmr_T13(void){
   CCU6_T13_Stop();
 }
-
+*/
 void CCU6_EnableST_T12(void){
   CCU6_T12_Str_En();
 }
-
+/*
 void CCU6_EnableST_T13(void){
   CCU6_T13_Str_En();
 }
+*/
 
 void CCU6_LoadShadowRegister_CC60(uint16 tick){
   CCU6_Ch0_Value_Set(tick);
@@ -1070,6 +1072,7 @@ void CCU6_LoadShadowRegister_CC62(uint16 tick){
   CCU6_Ch2_Value_Set(tick);
 }
 
+/*
 void CCU6_LoadShadowRegister_CC63(uint16 tick){
   CCU6_Ch3_Value_Set(tick);
 }
@@ -1091,30 +1094,39 @@ bool CCU6_IsT13Running(void){
 
    return(res);
 }
+*/
 
 void CCU6_SetT13Trigger(uint16 Mask){
   Field_Wrt16(&CCU6.TCTR2.reg, 0, (uint16)0xFFFF, Mask);
 }
 
-void CCU6_SetT13Compare(uint16 Compare){
-  if(Compare < CCU6_T13_Period_Value_Get()){
-    CCU6_Ch3_Value_Set(Compare);
-  }
-  else{
-    if(Compare <= (uint16)0xFFFE){
+void CCU6_SetT13Compare(
+   uint16 Compare
+){
+   if(
+         CCU6_T13_Period_Value_Get()
+      >  Compare
+   ){
       CCU6_Ch3_Value_Set(Compare);
+   }
+   else{
+      if(
+            (uint16)0xFFFE
+         >= Compare
+      ){
+         CCU6_Ch3_Value_Set(Compare);
+         CCU6_T13_Period_Value_Set((Compare + 1u));
+      }
+      else{
+         CCU6_Ch3_Value_Set((uint16)0xFFFE);
+         CCU6_T13_Period_Value_Set((uint16)0xFFFF);
+      }
+   }
 
-      CCU6_T13_Period_Value_Set((Compare + 1u));
-    }
-    else{
-      CCU6_Ch3_Value_Set((uint16)0xFFFE);
-      CCU6_T13_Period_Value_Set((uint16)0xFFFF);
-    }
-  }
-
-  CCU6_T13_Str_En();
+   CCU6_T13_Str_En();
 }
 
+/*
 void CCU6_SetT12T13ControlBits(uint16 Mask){
   Field_Wrt16(&CCU6.TCTR4.reg, 0, (uint16)0xFFFF, Mask);
 }
@@ -1147,6 +1159,14 @@ void CCU6_ClearIntStatus(uint16 Mask){
   Field_Wrt16(&CCU6.ISR.reg, 0, (uint16)0xFFFF, Mask);
 }
 */
+
+bool Emo_lExeSvm_Ccu6_1(void){
+   return CCU6.TCTR0.bit.CDIR;
+}
+
+void Emo_lExeSvm_Ccu6_2(void){
+   CCU6.IEN.bit.ENT12PM = 1;
+}
 
 /******************************************************************************/
 /* EOF                                                                        */
