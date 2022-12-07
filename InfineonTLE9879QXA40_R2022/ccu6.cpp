@@ -1168,6 +1168,20 @@ void Emo_lExeSvm_Ccu6_2(void){
    CCU6.IEN.bit.ENT12PM = 1;
 }
 
+void Emo_HandleCcu6(
+      uint16 lu16CompT13ValueDown
+   ,  uint16 lu16Comp60down
+   ,  uint16 lu16Comp61down
+   ,  uint16 lu16Comp62down
+){
+   CCU6_SetT13Compare(lu16CompT13ValueDown);
+   CCU6_SetT13Trigger(0x76);
+   CCU6_LoadShadowRegister_CC60(lu16Comp60down);
+   CCU6_LoadShadowRegister_CC61(lu16Comp61down);
+   CCU6_LoadShadowRegister_CC62(lu16Comp62down);
+   CCU6_EnableST_T12();
+}
+
 /******************************************************************************/
 /* EOF                                                                        */
 /******************************************************************************/
