@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : McalGpt.hpp                                                           */
+/* File   : McalGpt.hpp                                                       */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstMcalGpt.hpp"
+#include "infMcalGpt_ServiceNvM_Types.hpp"
 #include "CfgMcalGpt.hpp"
 #include "McalGpt_core.hpp"
 #include "infMcalGpt_Exp.hpp"
