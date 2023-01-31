@@ -32,14 +32,14 @@ class module_McalGpt:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-      const ConstMcalGpt_Type* lptrConst = (ConstMcalGpt_Type*)NULL_PTR;
+      const ConstModule_TypeAbstract* lptrNvMBlocksRom = (ConstModule_TypeAbstract*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, MCALGPT_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, MCALGPT_CONST,       MCALGPT_APPL_CONST) lptrConstModule
+            CONSTP2CONST(ConstModule_TypeAbstract, MCALGPT_CONST,       MCALGPT_APPL_CONST) lptrNvMBlocksRomModule
          ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALGPT_CONFIG_DATA, MCALGPT_APPL_CONST) lptrCfgModule
       );
       FUNC(void, MCALGPT_CODE) DeInitFunction (void);
