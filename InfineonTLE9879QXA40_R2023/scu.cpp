@@ -8,6 +8,8 @@
 /******************************************************************************/
 #include "types.hpp"
 
+#include "ReSim.hpp"
+
 #include "scu.hpp"
 
 #include "scu_defines.hpp"
