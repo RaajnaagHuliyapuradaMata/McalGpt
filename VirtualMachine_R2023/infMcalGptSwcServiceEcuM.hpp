@@ -1,6 +1,6 @@
 #pragma once
 /******************************************************************************/
-/* File   : infMcalGptServiceSwcEcuM.hpp                                      */
+/* File   : infMcalGptSwcServiceEcuM.hpp                                      */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
@@ -24,8 +24,8 @@
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-extern FUNC(void, MCALGPT_CODE) infMcalGptServiceSwcEcuM_InitFunction   (void);
-extern FUNC(void, MCALGPT_CODE) infMcalGptServiceSwcEcuM_DeInitFunction (void);
+extern FUNC(void, MCALGPT_CODE) infMcalGptSwcServiceEcuM_InitFunction   (void);
+extern FUNC(void, MCALGPT_CODE) infMcalGptSwcServiceEcuM_DeInitFunction (void);
 
 /******************************************************************************/
 /* CONSTS                                                                     */

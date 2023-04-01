@@ -10,7 +10,7 @@
 
 #include "McalGpt.hpp"
 
-#include "infMcalGptServiceSwcEcuM.hpp"
+#include "infMcalGptSwcServiceEcuM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -39,9 +39,9 @@
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, MCALGPT_CODE) infMcalGptServiceSwcEcuM_InitFunction   (void){}
-FUNC(void, MCALGPT_CODE) infMcalGptServiceSwcEcuM_DeInitFunction (void){}
-FUNC(void, MCALGPT_CODE) infMcalGptServiceSwcSchM_MainFunction   (void){}
+FUNC(void, MCALGPT_CODE) infMcalGptSwcServiceEcuM_InitFunction   (void){}
+FUNC(void, MCALGPT_CODE) infMcalGptSwcServiceEcuM_DeInitFunction (void){}
+FUNC(void, MCALGPT_CODE) infMcalGptSwcServiceSchM_MainFunction   (void){}
 
 /******************************************************************************/
 /* EOF                                                                        */
