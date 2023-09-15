@@ -23,11 +23,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "Std_Types.h"
+#include "Std_Types.hpp"
 
-#include "infMcalGptSwcApplEcuM.h"
+#include "infMcalGptSwcApplEcuM.hpp"
 
-#include "uC_Gpt.h"
+#include "uC_Gpt.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
