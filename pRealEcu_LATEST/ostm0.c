@@ -2,14 +2,26 @@
 
 #include "device.hpp"
 #include "Os_ConfigInterrupts.hpp"
-#include "ostm0X.hpp"
+#include "ostm0.hpp"
 #include "gpioX.hpp"
 #include "clocksX.hpp"
+
+void infSwcServiceOsSwcApplEcuM_InitFunction(void){
+   OSTM0_SetCompareValue(OSTM0_COMPARE_1MS);
+   OSTM0_IntervalMode();
+   OSTM0_Start();
+}
 
 void OSTM0_FreeRunMode(void){
    OSTM0TT  = 0x01u;
    OSTM0EMU = 0x00u;
    OSTM0CTL = 0x02u;
+}
+
+void OSTM0_IntervalMode(void){
+   OSTM0TT = 0x01u;
+   OSTM0EMU = 0x00u;
+   OSTM0CTL = 0x00u;
 }
 
 void OSTM0_InputCaptureMode(void){
@@ -18,8 +30,16 @@ void OSTM0_InputCaptureMode(void){
    OSTM0TS = 0x01u;
 }
 
+void OSTM0_Start(void){
+   OSTM0TS = 0x01u;
+}
+
 void OSTM0_Stop(void){
    OSTM0TT = 0x01u;
+}
+
+void OSTM0_SetCompareValue(uint16 comp){
+   OSTM0CMP = comp;
 }
 
 void OSTM0_SetInterrupt(uint8 ucValue){

@@ -32,7 +32,6 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define OSTM0_COMPARE_1MS                                                  40000
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -53,7 +52,7 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-#if(CfgProject_dSwitchReSim != STD_ON)
+#ifndef ReSim
 #else
 volatile       uint32 PROTCMD0;
 volatile const uint32 PROTS0;
@@ -75,20 +74,6 @@ volatile const uint32 CKSC_CPUCLKD_ACT;
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-static void OSTM0_SetCompareValue(uint16 comp){
-   OSTM0CMP = comp;
-}
-
-static void OSTM0_IntervalMode(void){
-   OSTM0TT  = 0x01u;
-   OSTM0EMU = 0x00u;
-   OSTM0CTL = 0x00u;
-}
-
-static void OSTM0_Start(void){
-   OSTM0TS = 0x01u;
-}
-
 FUNC(void, MCALGPT_CODE) infMcalGptSwcApplEcuM_InitFunction(void){
    MOSCC  = 0x02; //TBD: Move to CfgMcalGpt
    MOSCST = 0xFFFF;
@@ -124,10 +109,6 @@ FUNC(void, MCALGPT_CODE) infMcalGptSwcApplEcuM_InitFunction(void){
       ,  0x03
    );
    while(CKSC_CPUCLKS_ACT != 0x03);
-
-   OSTM0_SetCompareValue(OSTM0_COMPARE_1MS);
-   OSTM0_IntervalMode();
-   OSTM0_Start();
 }
 
 /******************************************************************************/
