@@ -52,8 +52,7 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-#ifndef ReSim
-#else
+#ifdef CfgProject_dSwitchReSim
 volatile       uint32 PROTCMD0;
 volatile const uint32 PROTS0;
 volatile       uint32 MOSCE;
